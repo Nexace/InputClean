@@ -1,0 +1,416 @@
+{
+  "source_files": {
+    "build.sh": 2,
+    "check.m": 2,
+    "main.m": 37,
+    "profile-live.sh": 3,
+    "profile.sh": 2,
+    "test.sh": 2,
+    "tests/resource-sample.c": 6,
+    "tests/ui-check.m": 2,
+    "tests/ui-profile.m": 10,
+    "tools/draw-icon.m": 2,
+    "README.md": 16,
+    "AppIcon.png": 1,
+    "assets/card-preview.png": 5
+  },
+  "code_ast_omissions": "Supplemented C helpers and entry points in semantic cache",
+  "semantic_token_usage_available": false,
+  "input_tokens": null,
+  "output_tokens": null,
+  "pre_build_diagnostics": {
+    "node_count": 115,
+    "unverified_node_count": 0,
+    "raw_edge_count": 220,
+    "non_object_edges": 0,
+    "missing_endpoint_edges": 0,
+    "dangling_endpoint_edges": 24,
+    "external_reference_edges": 0,
+    "self_loop_edges": 0,
+    "valid_candidate_edges": 196,
+    "exact_duplicate_edges": 0,
+    "directed_unique_endpoint_pairs": 186,
+    "directed_same_endpoint_collapsed_edges": 10,
+    "undirected_unique_endpoint_pairs": 181,
+    "undirected_same_endpoint_collapsed_edges": 15,
+    "same_endpoint_group_count": 9,
+    "relation_variant_groups": 0,
+    "source_file_variant_groups": 0,
+    "source_location_variant_groups": 9,
+    "context_variant_groups": 0,
+    "post_build_graph_type": "Graph",
+    "post_build_node_count": 135,
+    "post_build_edge_count": 205,
+    "post_build_error": "",
+    "producer_suppression": {
+      "path": "graphify/extract.py",
+      "total_sites": 12,
+      "sites": [
+        {
+          "line": 1785,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+        },
+        {
+          "line": 2349,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+        },
+        {
+          "line": 2351,
+          "name": "seen_doc_refs",
+          "tuple_arity": 0,
+          "sample": "seen_doc_refs: set[str] = set()"
+        },
+        {
+          "line": 3018,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+        },
+        {
+          "line": 3165,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids = {n.get(\"id\") for n in nodes}"
+        },
+        {
+          "line": 4175,
+          "name": "seen_keys",
+          "tuple_arity": 0,
+          "sample": "seen_keys: set[tuple] = set()"
+        },
+        {
+          "line": 4359,
+          "name": "seen_keys",
+          "tuple_arity": 0,
+          "sample": "seen_keys: set[tuple] = set()"
+        },
+        {
+          "line": 7447,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 7555,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 7634,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 8149,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 8150,
+          "name": "seen_edges",
+          "tuple_arity": 4,
+          "sample": "seen_edges: set[tuple[str, str, str, str | None]] = set()"
+        }
+      ],
+      "error": ""
+    },
+    "examples": [
+      {
+        "source": "main_cleanapp_makemenu",
+        "target": "nsmenuitem",
+        "edge_count": 3,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L386",
+          "L393",
+          "L397"
+        ],
+        "contexts": [
+          "type"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "nsimage",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L186",
+          "L187"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "nstimer",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L188",
+          "L189"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "main_m_nsuinteger",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L200",
+          "L201"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "main_cleanapp_stopcleaning",
+        "edge_count": 2,
+        "relations": [
+          "method"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L204",
+          "L360"
+        ],
+        "contexts": [
+          ""
+        ]
+      }
+    ]
+  },
+  "post_build_diagnostics": {
+    "node_count": 135,
+    "unverified_node_count": 0,
+    "raw_edge_count": 220,
+    "non_object_edges": 0,
+    "missing_endpoint_edges": 0,
+    "dangling_endpoint_edges": 0,
+    "external_reference_edges": 0,
+    "self_loop_edges": 0,
+    "valid_candidate_edges": 220,
+    "exact_duplicate_edges": 0,
+    "directed_unique_endpoint_pairs": 210,
+    "directed_same_endpoint_collapsed_edges": 10,
+    "undirected_unique_endpoint_pairs": 205,
+    "undirected_same_endpoint_collapsed_edges": 15,
+    "same_endpoint_group_count": 9,
+    "relation_variant_groups": 0,
+    "source_file_variant_groups": 0,
+    "source_location_variant_groups": 9,
+    "context_variant_groups": 0,
+    "post_build_graph_type": "Graph",
+    "post_build_node_count": 135,
+    "post_build_edge_count": 205,
+    "post_build_error": "",
+    "producer_suppression": {
+      "path": "graphify/extract.py",
+      "total_sites": 12,
+      "sites": [
+        {
+          "line": 1785,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+        },
+        {
+          "line": 2349,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids = {n[\"id\"] for n in nodes}"
+        },
+        {
+          "line": 2351,
+          "name": "seen_doc_refs",
+          "tuple_arity": 0,
+          "sample": "seen_doc_refs: set[str] = set()"
+        },
+        {
+          "line": 3018,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = {n[\"id\"] for n in nodes}"
+        },
+        {
+          "line": 3165,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids = {n.get(\"id\") for n in nodes}"
+        },
+        {
+          "line": 4175,
+          "name": "seen_keys",
+          "tuple_arity": 0,
+          "sample": "seen_keys: set[tuple] = set()"
+        },
+        {
+          "line": 4359,
+          "name": "seen_keys",
+          "tuple_arity": 0,
+          "sample": "seen_keys: set[tuple] = set()"
+        },
+        {
+          "line": 7447,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 7555,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 7634,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 8149,
+          "name": "seen_ids",
+          "tuple_arity": 0,
+          "sample": "seen_ids: set[str] = set()"
+        },
+        {
+          "line": 8150,
+          "name": "seen_edges",
+          "tuple_arity": 4,
+          "sample": "seen_edges: set[tuple[str, str, str, str | None]] = set()"
+        }
+      ],
+      "error": ""
+    },
+    "examples": [
+      {
+        "source": "main_cleanapp_makemenu",
+        "target": "nsmenuitem",
+        "edge_count": 3,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L386",
+          "L393",
+          "L397"
+        ],
+        "contexts": [
+          "type"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "nsimage",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L186",
+          "L187"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "nstimer",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L188",
+          "L189"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
+        "source": "main_cleanapp",
+        "target": "main_m_nsuinteger",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L200",
+          "L201"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
+        "source": "tests_ui_profile_uiprofile",
+        "target": "tests_ui_profile_m_nsuinteger",
+        "edge_count": 2,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "tests/ui-profile.m"
+        ],
+        "source_locations": [
+          "L18",
+          "L19"
+        ],
+        "contexts": [
+          "field"
+        ]
+      }
+    ]
+  },
+  "original_relations_preserved": 220
+}
