@@ -1,7 +1,13 @@
-#define main TrackpadCleanMain
+#define main InputCleanMain
 #include "../main.m"
 #undef main
 #include <assert.h>
+
+@interface ModeProbe:CleanApp
+@end
+@implementation ModeProbe
+- (void)startCleaning:(CleanMode)mode { assert(!self.menuOpen);self.mode=mode;self.cleaning=YES; }
+@end
 
 int main(int argc,const char *argv[]) {
     @autoreleasepool {
@@ -11,11 +17,33 @@ int main(int argc,const char *argv[]) {
         assert(menu.itemArray.count==5);
         assert([menu.itemArray[1].title isEqualToString:@"Clean keyboard"]);
         assert([menu.itemArray[2].title isEqualToString:@"Clean both"]);
-        for(NSArray *lines in @[@[@"Ready to clean",@"Click to pause · Esc ×5 to restore"],
+        ModeProbe *probe=[ModeProbe new];
+        [probe selectMode:[probe makeMenu].itemArray[1]];
+        assert(probe.mode==CleanKeyboard);
+        [probe stopCleaning];[probe toggleCleaning];
+        assert(probe.mode==CleanKeyboard); // The icon keeps the mode selected in the menu.
+        [probe stopCleaning];
+        assert([probe makeMenu].itemArray[1].state==NSControlStateValueOn);
+        ModeProbe *menuProbe=[ModeProbe new];
+        NSTimer *choose=[NSTimer timerWithTimeInterval:.05 repeats:NO block:^(NSTimer *timer) {
+            (void)timer;[menuProbe.activeMenu performActionForItemAtIndex:1];
+        }];
+        NSTimer *cancel=[NSTimer timerWithTimeInterval:1 repeats:NO block:^(NSTimer *timer) {
+            (void)timer;[menuProbe.activeMenu cancelTracking];
+        }];
+        [NSRunLoop.mainRunLoop addTimer:choose forMode:NSRunLoopCommonModes];
+        [NSRunLoop.mainRunLoop addTimer:cancel forMode:NSRunLoopCommonModes];
+        [menuProbe presentMenu];
+        [choose invalidate];[cancel invalidate];
+        CFRunLoopRunInMode(kCFRunLoopDefaultMode,.1,false);
+        assert(menuProbe.cleaning && menuProbe.mode==CleanKeyboard);
+        [menuProbe stopCleaning];
+        for(NSArray *lines in @[@[@"Trackpad ready",@"Click to pause · Ctrl-click for options"],
+                               @[@"Keyboard & trackpad ready",@"Click to pause · Ctrl-click for options"],
                                @[@"Trackpad input paused",@"Mouse: click icon · Keyboard: Esc ×5"],
                                @[@"Keyboard input paused",@"Click icon or press Esc ×5 to restore"],
                                @[@"Keyboard & trackpad paused",@"Click icon or press Esc ×5 to restore"],
-                               @[@"Allow Accessibility access",@"Enable TrackpadClean, then click again"]]) {
+                               @[@"Allow Accessibility access",@"Enable InputClean, then click again"]]) {
             [app showCardWithStatus:lines[0] detail:lines[1] pinned:YES];
             CGFloat sizes[]={14,13,12};
             for(NSUInteger i=0;i<3;i++) {
@@ -28,7 +56,7 @@ int main(int argc,const char *argv[]) {
             [app hideCard];assert(!app.panel && !app.cardView);
         }
         if(argc==2) {
-            [app showCardWithStatus:@"Ready to clean" detail:@"Click to pause · Esc ×5 to restore" pinned:YES];
+            [app showCardWithStatus:@"Trackpad ready" detail:@"Click to pause · Ctrl-click for options" pinned:YES];
             NSImage *image=[[NSImage alloc]initWithSize:app.cardView.bounds.size];
             [image lockFocus];[NSColor.windowBackgroundColor setFill];NSRectFill(app.cardView.bounds);
             [app.cardView drawRect:app.cardView.bounds];[image unlockFocus];

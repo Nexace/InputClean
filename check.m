@@ -1,4 +1,4 @@
-#define main TrackpadCleanMain
+#define main InputCleanMain
 #include "main.m"
 #undef main
 #include <assert.h>
@@ -25,6 +25,10 @@ int main(void) {
     assert(!IsPointerEvent(kCGEventKeyDown));
     assert(!IsPointerEvent(kCGEventKeyUp));
     assert(!IsPointerEvent(kCGEventFlagsChanged));
+    assert(ModeMenuClick(NSEventTypeRightMouseUp,0));
+    assert(ModeMenuClick(NSEventTypeLeftMouseUp,NSEventModifierFlagControl));
+    assert(!ModeMenuClick(NSEventTypeLeftMouseUp,0));
+    assert(!ModeMenuClick(NSEventTypeLeftMouseUp,NSEventModifierFlagShift));
     @autoreleasepool {
         CleanApp *app=[CleanApp new];
         app.mode=CleanTrackpad;

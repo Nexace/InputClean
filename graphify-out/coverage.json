@@ -2,16 +2,16 @@
   "source_files": {
     "build.sh": 2,
     "check.m": 2,
-    "main.m": 37,
+    "main.m": 39,
     "profile-live.sh": 3,
     "profile.sh": 2,
     "test.sh": 2,
     "tests/resource-sample.c": 6,
-    "tests/ui-check.m": 2,
+    "tests/ui-check.m": 4,
     "tests/ui-profile.m": 10,
     "tools/draw-icon.m": 2,
-    "README.md": 16,
-    "AppIcon.png": 1,
+    "README.md": 19,
+    "AppIcon.png": 5,
     "assets/card-preview.png": 5
   },
   "code_ast_omissions": "Supplemented C helpers and entry points in semantic cache",
@@ -19,28 +19,28 @@
   "input_tokens": null,
   "output_tokens": null,
   "pre_build_diagnostics": {
-    "node_count": 115,
+    "node_count": 126,
     "unverified_node_count": 0,
-    "raw_edge_count": 220,
+    "raw_edge_count": 255,
     "non_object_edges": 0,
     "missing_endpoint_edges": 0,
-    "dangling_endpoint_edges": 24,
+    "dangling_endpoint_edges": 25,
     "external_reference_edges": 0,
     "self_loop_edges": 0,
-    "valid_candidate_edges": 196,
+    "valid_candidate_edges": 230,
     "exact_duplicate_edges": 0,
-    "directed_unique_endpoint_pairs": 186,
-    "directed_same_endpoint_collapsed_edges": 10,
-    "undirected_unique_endpoint_pairs": 181,
-    "undirected_same_endpoint_collapsed_edges": 15,
-    "same_endpoint_group_count": 9,
+    "directed_unique_endpoint_pairs": 217,
+    "directed_same_endpoint_collapsed_edges": 13,
+    "undirected_unique_endpoint_pairs": 212,
+    "undirected_same_endpoint_collapsed_edges": 18,
+    "same_endpoint_group_count": 11,
     "relation_variant_groups": 0,
     "source_file_variant_groups": 0,
-    "source_location_variant_groups": 9,
-    "context_variant_groups": 0,
+    "source_location_variant_groups": 10,
+    "context_variant_groups": 1,
     "post_build_graph_type": "Graph",
-    "post_build_node_count": 135,
-    "post_build_edge_count": 205,
+    "post_build_node_count": 147,
+    "post_build_edge_count": 237,
     "post_build_error": "",
     "producer_suppression": {
       "path": "graphify/extract.py",
@@ -123,6 +123,25 @@
     },
     "examples": [
       {
+        "source": "main_cleanapp",
+        "target": "main_cleanmode",
+        "edge_count": 3,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L201",
+          "L202",
+          "L203"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
         "source": "main_cleanapp_makemenu",
         "target": "nsmenuitem",
         "edge_count": 3,
@@ -133,9 +152,9 @@
           "main.m"
         ],
         "source_locations": [
-          "L386",
-          "L393",
-          "L397"
+          "L407",
+          "L414",
+          "L418"
         ],
         "contexts": [
           "type"
@@ -152,8 +171,8 @@
           "main.m"
         ],
         "source_locations": [
-          "L186",
-          "L187"
+          "L194",
+          "L195"
         ],
         "contexts": [
           "field"
@@ -170,8 +189,8 @@
           "main.m"
         ],
         "source_locations": [
-          "L188",
-          "L189"
+          "L196",
+          "L197"
         ],
         "contexts": [
           "field"
@@ -188,56 +207,38 @@
           "main.m"
         ],
         "source_locations": [
-          "L200",
-          "L201"
+          "L210",
+          "L211"
         ],
         "contexts": [
           "field"
-        ]
-      },
-      {
-        "source": "main_cleanapp",
-        "target": "main_cleanapp_stopcleaning",
-        "edge_count": 2,
-        "relations": [
-          "method"
-        ],
-        "source_files": [
-          "main.m"
-        ],
-        "source_locations": [
-          "L204",
-          "L360"
-        ],
-        "contexts": [
-          ""
         ]
       }
     ]
   },
   "post_build_diagnostics": {
-    "node_count": 135,
+    "node_count": 147,
     "unverified_node_count": 0,
-    "raw_edge_count": 220,
+    "raw_edge_count": 255,
     "non_object_edges": 0,
     "missing_endpoint_edges": 0,
     "dangling_endpoint_edges": 0,
     "external_reference_edges": 0,
     "self_loop_edges": 0,
-    "valid_candidate_edges": 220,
+    "valid_candidate_edges": 255,
     "exact_duplicate_edges": 0,
-    "directed_unique_endpoint_pairs": 210,
-    "directed_same_endpoint_collapsed_edges": 10,
-    "undirected_unique_endpoint_pairs": 205,
-    "undirected_same_endpoint_collapsed_edges": 15,
-    "same_endpoint_group_count": 9,
+    "directed_unique_endpoint_pairs": 242,
+    "directed_same_endpoint_collapsed_edges": 13,
+    "undirected_unique_endpoint_pairs": 237,
+    "undirected_same_endpoint_collapsed_edges": 18,
+    "same_endpoint_group_count": 11,
     "relation_variant_groups": 0,
     "source_file_variant_groups": 0,
-    "source_location_variant_groups": 9,
-    "context_variant_groups": 0,
+    "source_location_variant_groups": 10,
+    "context_variant_groups": 1,
     "post_build_graph_type": "Graph",
-    "post_build_node_count": 135,
-    "post_build_edge_count": 205,
+    "post_build_node_count": 147,
+    "post_build_edge_count": 237,
     "post_build_error": "",
     "producer_suppression": {
       "path": "graphify/extract.py",
@@ -320,6 +321,25 @@
     },
     "examples": [
       {
+        "source": "main_cleanapp",
+        "target": "main_cleanmode",
+        "edge_count": 3,
+        "relations": [
+          "references"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L201",
+          "L202",
+          "L203"
+        ],
+        "contexts": [
+          "field"
+        ]
+      },
+      {
         "source": "main_cleanapp_makemenu",
         "target": "nsmenuitem",
         "edge_count": 3,
@@ -330,12 +350,30 @@
           "main.m"
         ],
         "source_locations": [
-          "L386",
-          "L393",
-          "L397"
+          "L407",
+          "L414",
+          "L418"
         ],
         "contexts": [
           "type"
+        ]
+      },
+      {
+        "source": "main_cleanapp_presentmenu",
+        "target": "main_cleanapp_startcleaning",
+        "edge_count": 2,
+        "relations": [
+          "calls"
+        ],
+        "source_files": [
+          "main.m"
+        ],
+        "source_locations": [
+          "L430"
+        ],
+        "contexts": [
+          "",
+          "call"
         ]
       },
       {
@@ -349,8 +387,8 @@
           "main.m"
         ],
         "source_locations": [
-          "L186",
-          "L187"
+          "L194",
+          "L195"
         ],
         "contexts": [
           "field"
@@ -367,44 +405,8 @@
           "main.m"
         ],
         "source_locations": [
-          "L188",
-          "L189"
-        ],
-        "contexts": [
-          "field"
-        ]
-      },
-      {
-        "source": "main_cleanapp",
-        "target": "main_m_nsuinteger",
-        "edge_count": 2,
-        "relations": [
-          "references"
-        ],
-        "source_files": [
-          "main.m"
-        ],
-        "source_locations": [
-          "L200",
-          "L201"
-        ],
-        "contexts": [
-          "field"
-        ]
-      },
-      {
-        "source": "tests_ui_profile_uiprofile",
-        "target": "tests_ui_profile_m_nsuinteger",
-        "edge_count": 2,
-        "relations": [
-          "references"
-        ],
-        "source_files": [
-          "tests/ui-profile.m"
-        ],
-        "source_locations": [
-          "L18",
-          "L19"
+          "L196",
+          "L197"
         ],
         "contexts": [
           "field"
@@ -412,5 +414,5 @@
       }
     ]
   },
-  "original_relations_preserved": 220
+  "original_relations_preserved": 255
 }

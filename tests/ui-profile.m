@@ -1,4 +1,4 @@
-#define main TrackpadCleanMain
+#define main InputCleanMain
 #include "../main.m"
 #undef main
 #include <libproc.h>
@@ -34,7 +34,7 @@ static NSDictionary *Stats(void) {
 - (void)idleDone { [self record:@"idle"];[self beginPhase];[self cycleCard]; }
 - (void)cycleCard { @autoreleasepool {
     if(self.panel) [self hideCard];
-    else [self showCardWithStatus:@"Ready to clean" detail:@"Click to pause · Esc ×5 to restore" pinned:YES];
+    else [self showHover];
     self.cycle++;
     if(self.cycle<60) [self performSelector:@selector(cycleCard) withObject:nil afterDelay:.1];
     else { [self hideCard];[self record:@"30_hover_cycles"];[self beginPhase];[self cycleMenu]; }

@@ -1,34 +1,34 @@
 [
   {
     "phase" : "idle",
-    "cpu_percent_one_core" : 0.0063466039863160481,
-    "cpu_ns" : 2003082,
-    "current_bytes" : 8307432,
-    "peak_bytes" : 8422120,
-    "seconds" : 10.000687003135681
+    "cpu_percent_one_core" : 0.0072343038471963583,
+    "cpu_ns" : 2212684,
+    "current_bytes" : 9896680,
+    "peak_bytes" : 9896680,
+    "seconds" : 10.001059055328369
   },
   {
     "phase" : "30_hover_cycles",
-    "cpu_percent_one_core" : 0.18897460670376229,
-    "cpu_ns" : 14035236,
-    "current_bytes" : 11404056,
-    "peak_bytes" : 11617048,
-    "seconds" : 6.3629930019378662
+    "cpu_percent_one_core" : 0.18024633673508528,
+    "cpu_ns" : 13551170,
+    "current_bytes" : 13075224,
+    "peak_bytes" : 13812504,
+    "seconds" : 6.2873760461807251
   },
   {
     "phase" : "5_menu_cycles",
-    "cpu_percent_one_core" : 0.23289642212816972,
-    "cpu_ns" : 19576293,
-    "current_bytes" : 12534672,
-    "peak_bytes" : 12960656,
-    "seconds" : 2.376911997795105
+    "cpu_percent_one_core" : 0.24848249479192405,
+    "cpu_ns" : 19455316,
+    "current_bytes" : 14418832,
+    "peak_bytes" : 15074192,
+    "seconds" : 2.373805046081543
   },
   {
     "phase" : "post_hover_idle",
-    "cpu_percent_one_core" : 0.0017892401434785798,
-    "cpu_ns" : 19760617,
-    "current_bytes" : 12174224,
-    "peak_bytes" : 12960656,
-    "seconds" : 10.001116991043091
+    "cpu_percent_one_core" : 0.0017729106780454635,
+    "cpu_ns" : 19636607,
+    "current_bytes" : 15057808,
+    "peak_bytes" : 15074192,
+    "seconds" : 10.000391006469727
   }
 ]

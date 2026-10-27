@@ -19,7 +19,7 @@
       "file_type": "code",
       "norm_label": "cleanapp",
       "source_file": "main.m",
-      "source_location": "L184"
+      "source_location": "L192"
     },
     {
       "id": "tests_ui_profile_uiprofile",
@@ -35,53 +35,30 @@
       "source_location": "L14"
     },
     {
+      "id": "tests_ui_check_modeprobe",
+      "label": "ModeProbe",
+      "_callable": true,
+      "_callable_class": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "file_type": "code",
+      "norm_label": "modeprobe",
+      "source_file": "tests/ui-check.m",
+      "source_location": "L6"
+    },
+    {
       "id": "main_cardview",
       "label": "CardView",
       "_callable": true,
       "_callable_class": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "cardview",
       "source_file": "main.m",
-      "source_location": "L127"
-    },
-    {
-      "id": "tests_resource_sample_cleaning",
-      "label": "cleaning()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "norm_label": "cleaning()",
-      "source_file": "tests/resource-sample.c",
-      "source_location": "L9"
-    },
-    {
-      "id": "tests_resource_sample_main",
-      "label": "main()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "norm_label": "main()",
-      "source_file": "tests/resource-sample.c",
-      "source_location": "L19"
-    },
-    {
-      "id": "tests_resource_sample_now",
-      "label": "now()",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "norm_label": "now()",
-      "source_file": "tests/resource-sample.c",
-      "source_location": "L8"
+      "source_location": "L135"
     },
     {
       "id": "main_cleanapp_applicationdidfinishlaunching",
@@ -97,89 +74,49 @@
             "callee": "alloc",
             "receiver_type": "NSTrackingArea",
             "lang": "objc",
-            "line": "L272"
+            "line": "L283"
           }
         ]
       },
       "norm_label": "-applicationdidfinishlaunching",
       "source_file": "main.m",
-      "source_location": "L261"
+      "source_location": "L272"
     },
     {
-      "id": "main_cleanapp_closecard",
-      "label": "-closeCard",
+      "id": "tests_resource_sample_cleaning",
+      "label": "cleaning()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
-      "community_name": "Card Dismissal and Cleanup",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
       "file_type": "code",
-      "norm_label": "-closecard",
-      "source_file": "main.m",
-      "source_location": "L440"
+      "norm_label": "cleaning()",
+      "source_file": "tests/resource-sample.c",
+      "source_location": "L9"
     },
     {
-      "id": "main_cleanapp_hidecard",
-      "label": "-hideCard",
+      "id": "tests_resource_sample_main",
+      "label": "main()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
-      "community_name": "Card Dismissal and Cleanup",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
       "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "invalidate",
-            "receiver_type": "NSTimer",
-            "lang": "objc",
-            "line": "L280"
-          },
-          {
-            "callee": "orderOut",
-            "receiver_type": "NSPanel",
-            "lang": "objc",
-            "line": "L282"
-          },
-          {
-            "callee": "close",
-            "receiver_type": "NSPanel",
-            "lang": "objc",
-            "line": "L284"
-          },
-          {
-            "callee": "flush",
-            "receiver_type": "CATransaction",
-            "lang": "objc",
-            "line": "L285"
-          },
-          {
-            "callee": "postEventatStart",
-            "receiver_type": "NSApp",
-            "lang": "objc",
-            "line": "L287"
-          },
-          {
-            "callee": "otherEventWithTypelocationmodifierFlagstimestampwindowNumbercontextsubtypedata1data2",
-            "receiver_type": "NSEvent",
-            "lang": "objc",
-            "line": "L287"
-          }
-        ]
-      },
-      "norm_label": "-hidecard",
-      "source_file": "main.m",
-      "source_location": "L278"
+      "norm_label": "main()",
+      "source_file": "tests/resource-sample.c",
+      "source_location": "L19"
     },
     {
-      "id": "main_cleanapp_mouseexited",
-      "label": "-mouseExited",
+      "id": "tests_resource_sample_now",
+      "label": "now()",
       "_callable": true,
       "_origin": "ast",
-      "community": 11,
-      "community_name": "Card Dismissal and Cleanup",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
       "file_type": "code",
-      "norm_label": "-mouseexited",
-      "source_file": "main.m",
-      "source_location": "L301"
+      "norm_label": "now()",
+      "source_file": "tests/resource-sample.c",
+      "source_location": "L8"
     },
     {
       "id": "tests_ui_profile_uiprofile_applicationdidfinishlaunching",
@@ -336,35 +273,283 @@
       "source_location": "L28"
     },
     {
+      "id": "main_cleanapp_closecard",
+      "label": "-closeCard",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "-closecard",
+      "source_file": "main.m",
+      "source_location": "L464"
+    },
+    {
+      "id": "main_cleanapp_hidecard",
+      "label": "-hideCard",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "invalidate",
+            "receiver_type": "NSTimer",
+            "lang": "objc",
+            "line": "L291"
+          },
+          {
+            "callee": "orderOut",
+            "receiver_type": "NSPanel",
+            "lang": "objc",
+            "line": "L293"
+          },
+          {
+            "callee": "close",
+            "receiver_type": "NSPanel",
+            "lang": "objc",
+            "line": "L295"
+          },
+          {
+            "callee": "flush",
+            "receiver_type": "CATransaction",
+            "lang": "objc",
+            "line": "L296"
+          },
+          {
+            "callee": "postEventatStart",
+            "receiver_type": "NSApp",
+            "lang": "objc",
+            "line": "L298"
+          },
+          {
+            "callee": "otherEventWithTypelocationmodifierFlagstimestampwindowNumbercontextsubtypedata1data2",
+            "receiver_type": "NSEvent",
+            "lang": "objc",
+            "line": "L298"
+          }
+        ]
+      },
+      "norm_label": "-hidecard",
+      "source_file": "main.m",
+      "source_location": "L289"
+    },
+    {
+      "id": "main_cleanapp_mouseentered",
+      "label": "-mouseEntered",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "invalidate",
+            "receiver_type": "NSTimer",
+            "lang": "objc",
+            "line": "L308"
+          },
+          {
+            "callee": "scheduledTimerWithTimeIntervaltargetselectoruserInforepeats",
+            "receiver_type": "NSTimer",
+            "lang": "objc",
+            "line": "L309"
+          }
+        ]
+      },
+      "norm_label": "-mouseentered",
+      "source_file": "main.m",
+      "source_location": "L305"
+    },
+    {
+      "id": "main_cleanapp_mouseexited",
+      "label": "-mouseExited",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "-mouseexited",
+      "source_file": "main.m",
+      "source_location": "L312"
+    },
+    {
+      "id": "main_cleanapp_presentcardwithstatusdetailpinned",
+      "label": "-presentCardWithStatusdetailpinned",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "alloc",
+            "receiver_type": "NSPanel",
+            "lang": "objc",
+            "line": "L435"
+          },
+          {
+            "callee": "alloc",
+            "receiver_type": "NSGlassEffectView",
+            "lang": "objc",
+            "line": "L446"
+          },
+          {
+            "callee": "alloc",
+            "receiver_type": "NSVisualEffectView",
+            "lang": "objc",
+            "line": "L450"
+          },
+          {
+            "callee": "addSubview",
+            "receiver_type": "NSVisualEffectView",
+            "lang": "objc",
+            "line": "L453"
+          },
+          {
+            "callee": "setFrameOrigin",
+            "receiver_type": "NSPanel",
+            "lang": "objc",
+            "line": "L459"
+          },
+          {
+            "callee": "orderFrontRegardless",
+            "receiver_type": "NSPanel",
+            "lang": "objc",
+            "line": "L461"
+          }
+        ]
+      },
+      "norm_label": "-presentcardwithstatusdetailpinned",
+      "source_file": "main.m",
+      "source_location": "L432"
+    },
+    {
+      "id": "main_cleanapp_showcardwithstatusdetailpinned",
+      "label": "-showCardWithStatusdetailpinned",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "-showcardwithstatusdetailpinned",
+      "source_file": "main.m",
+      "source_location": "L301"
+    },
+    {
+      "id": "main_cleanapp_showhover",
+      "label": "-showHover",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "-showhover",
+      "source_file": "main.m",
+      "source_location": "L313"
+    },
+    {
+      "id": "main_cleanapp_makemenu",
+      "label": "-makeMenu",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "new",
+            "receiver_type": "NSMenu",
+            "lang": "objc",
+            "line": "L404"
+          },
+          {
+            "callee": "alloc",
+            "receiver_type": "NSMenuItem",
+            "lang": "objc",
+            "line": "L407"
+          },
+          {
+            "callee": "addItem",
+            "receiver_type": "NSMenu",
+            "lang": "objc",
+            "line": "L410"
+          }
+        ]
+      },
+      "norm_label": "-makemenu",
+      "source_file": "main.m",
+      "source_location": "L403"
+    },
+    {
+      "id": "main_cleanapp_presentmenu",
+      "label": "-presentMenu",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "file_type": "code",
+      "metadata": {
+        "unresolved_calls": [
+          {
+            "callee": "popUpMenuPositioningItematLocationinView",
+            "receiver_type": "NSMenu",
+            "lang": "objc",
+            "line": "L425"
+          }
+        ]
+      },
+      "norm_label": "-presentmenu",
+      "source_file": "main.m",
+      "source_location": "L422"
+    },
+    {
+      "id": "tests_ui_check_modeprobe_startcleaning",
+      "label": "-startCleaning",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "file_type": "code",
+      "norm_label": "-startcleaning",
+      "source_file": "tests/ui-check.m",
+      "source_location": "L9"
+    },
+    {
       "id": "main_cardview_accessibilityrole",
       "label": "-accessibilityRole",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "-accessibilityrole",
       "source_file": "main.m",
-      "source_location": "L135"
+      "source_location": "L143"
     },
     {
       "id": "main_cardview_accessibilityvalue",
       "label": "-accessibilityValue",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "-accessibilityvalue",
       "source_file": "main.m",
-      "source_location": "L136"
+      "source_location": "L144"
     },
     {
       "id": "main_cardview_drawrect",
       "label": "-drawRect",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "metadata": {
@@ -373,74 +558,74 @@
             "callee": "bezierPathWithRoundedRectxRadiusyRadius",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L166"
+            "line": "L174"
           },
           {
             "callee": "colorWithWhitealpha",
             "receiver_type": "NSColor",
             "lang": "objc",
-            "line": "L167"
+            "line": "L175"
           },
           {
             "callee": "fill",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L167"
+            "line": "L175"
           },
           {
             "callee": "stroke",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L168"
+            "line": "L176"
           },
           {
             "callee": "systemFontOfSizeweight",
             "receiver_type": "NSFont",
             "lang": "objc",
-            "line": "L173"
+            "line": "L181"
           },
           {
             "callee": "colorWithSRGBRedgreenbluealpha",
             "receiver_type": "NSColor",
             "lang": "objc",
-            "line": "L176"
+            "line": "L184"
           },
           {
             "callee": "bezierPathWithOvalInRect",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L177"
+            "line": "L185"
           },
           {
             "callee": "bezierPath",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L179"
+            "line": "L187"
           },
           {
             "callee": "moveToPoint",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L180"
+            "line": "L188"
           },
           {
             "callee": "lineToPoint",
             "receiver_type": "NSBezierPath",
             "lang": "objc",
-            "line": "L180"
+            "line": "L188"
           }
         ]
       },
       "norm_label": "-drawrect",
       "source_file": "main.m",
-      "source_location": "L162"
+      "source_location": "L170"
     },
     {
       "id": "main_cardview_updatelayer",
       "label": "-updateLayer",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "metadata": {
@@ -449,99 +634,111 @@
             "callee": "saveGraphicsState",
             "receiver_type": "NSGraphicsContext",
             "lang": "objc",
-            "line": "L152"
+            "line": "L160"
           },
           {
             "callee": "graphicsContextWithCGContextflipped",
             "receiver_type": "NSGraphicsContext",
             "lang": "objc",
-            "line": "L153"
+            "line": "L161"
           },
           {
             "callee": "restoreGraphicsState",
             "receiver_type": "NSGraphicsContext",
             "lang": "objc",
-            "line": "L154"
+            "line": "L162"
           },
           {
             "callee": "begin",
             "receiver_type": "CATransaction",
             "lang": "objc",
-            "line": "L157"
+            "line": "L165"
           },
           {
             "callee": "setDisableActions",
             "receiver_type": "CATransaction",
             "lang": "objc",
-            "line": "L157"
+            "line": "L165"
           },
           {
             "callee": "commit",
             "receiver_type": "CATransaction",
             "lang": "objc",
-            "line": "L160"
+            "line": "L168"
           }
         ]
       },
       "norm_label": "-updatelayer",
       "source_file": "main.m",
-      "source_location": "L137"
+      "source_location": "L145"
     },
     {
       "id": "main_cardview_wantsupdatelayer",
       "label": "-wantsUpdateLayer",
       "_callable": true,
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "-wantsupdatelayer",
       "source_file": "main.m",
-      "source_location": "L134"
+      "source_location": "L142"
     },
     {
       "id": "main_cleanapp_applicationwillterminate",
       "label": "-applicationWillTerminate",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "norm_label": "-applicationwillterminate",
       "source_file": "main.m",
-      "source_location": "L441"
+      "source_location": "L465"
     },
     {
       "id": "main_cleanapp_clicked",
       "label": "-clicked",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "norm_label": "-clicked",
       "source_file": "main.m",
-      "source_location": "L306"
+      "source_location": "L318"
+    },
+    {
+      "id": "main_cleanapp_init",
+      "label": "-init",
+      "_callable": true,
+      "_origin": "ast",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
+      "file_type": "code",
+      "norm_label": "-init",
+      "source_file": "main.m",
+      "source_location": "L271"
     },
     {
       "id": "main_cleanapp_selectmode",
       "label": "-selectMode",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "norm_label": "-selectmode",
       "source_file": "main.m",
-      "source_location": "L377"
+      "source_location": "L392"
     },
     {
       "id": "main_cleanapp_startcleaning",
       "label": "-startCleaning",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -549,27 +746,27 @@
             "callee": "dictionary",
             "receiver_type": "NSMutableDictionary",
             "lang": "objc",
-            "line": "L342"
+            "line": "L356"
           },
           {
             "callee": "scheduledTimerWithTimeIntervaltargetselectoruserInforepeats",
             "receiver_type": "NSTimer",
             "lang": "objc",
-            "line": "L355"
+            "line": "L369"
           }
         ]
       },
       "norm_label": "-startcleaning",
       "source_file": "main.m",
-      "source_location": "L322"
+      "source_location": "L336"
     },
     {
       "id": "main_cleanapp_stopcleaning",
       "label": "-stopCleaning",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "metadata": {
         "unresolved_calls": [
@@ -577,283 +774,90 @@
             "callee": "invalidate",
             "receiver_type": "NSTimer",
             "lang": "objc",
-            "line": "L363"
+            "line": "L377"
           },
           {
             "callee": "cancelTracking",
             "receiver_type": "NSMenu",
             "lang": "objc",
-            "line": "L369"
+            "line": "L384"
           }
         ]
       },
       "norm_label": "-stopcleaning",
       "source_file": "main.m",
-      "source_location": "L360"
+      "source_location": "L374"
     },
     {
       "id": "main_cleanapp_togglecleaning",
       "label": "-toggleCleaning",
       "_callable": true,
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "norm_label": "-togglecleaning",
       "source_file": "main.m",
-      "source_location": "L315"
+      "source_location": "L329"
     },
     {
-      "id": "main_cleanapp_mouseentered",
-      "label": "-mouseEntered",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "invalidate",
-            "receiver_type": "NSTimer",
-            "lang": "objc",
-            "line": "L297"
-          },
-          {
-            "callee": "scheduledTimerWithTimeIntervaltargetselectoruserInforepeats",
-            "receiver_type": "NSTimer",
-            "lang": "objc",
-            "line": "L298"
-          }
-        ]
-      },
-      "norm_label": "-mouseentered",
-      "source_file": "main.m",
-      "source_location": "L294"
-    },
-    {
-      "id": "main_cleanapp_presentcardwithstatusdetailpinned",
-      "label": "-presentCardWithStatusdetailpinned",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "alloc",
-            "receiver_type": "NSPanel",
-            "lang": "objc",
-            "line": "L411"
-          },
-          {
-            "callee": "alloc",
-            "receiver_type": "NSGlassEffectView",
-            "lang": "objc",
-            "line": "L422"
-          },
-          {
-            "callee": "alloc",
-            "receiver_type": "NSVisualEffectView",
-            "lang": "objc",
-            "line": "L426"
-          },
-          {
-            "callee": "addSubview",
-            "receiver_type": "NSVisualEffectView",
-            "lang": "objc",
-            "line": "L429"
-          },
-          {
-            "callee": "setFrameOrigin",
-            "receiver_type": "NSPanel",
-            "lang": "objc",
-            "line": "L435"
-          },
-          {
-            "callee": "orderFrontRegardless",
-            "receiver_type": "NSPanel",
-            "lang": "objc",
-            "line": "L437"
-          }
-        ]
-      },
-      "norm_label": "-presentcardwithstatusdetailpinned",
-      "source_file": "main.m",
-      "source_location": "L408"
-    },
-    {
-      "id": "main_cleanapp_showcardwithstatusdetailpinned",
-      "label": "-showCardWithStatusdetailpinned",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "norm_label": "-showcardwithstatusdetailpinned",
-      "source_file": "main.m",
-      "source_location": "L290"
-    },
-    {
-      "id": "main_cleanapp_showhover",
-      "label": "-showHover",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "norm_label": "-showhover",
-      "source_file": "main.m",
-      "source_location": "L302"
-    },
-    {
-      "id": "main_cleanapp_makemenu",
-      "label": "-makeMenu",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Menus and UI Checks",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "new",
-            "receiver_type": "NSMenu",
-            "lang": "objc",
-            "line": "L383"
-          },
-          {
-            "callee": "alloc",
-            "receiver_type": "NSMenuItem",
-            "lang": "objc",
-            "line": "L386"
-          },
-          {
-            "callee": "addItem",
-            "receiver_type": "NSMenu",
-            "lang": "objc",
-            "line": "L389"
-          }
-        ]
-      },
-      "norm_label": "-makemenu",
-      "source_file": "main.m",
-      "source_location": "L382"
-    },
-    {
-      "id": "main_cleanapp_presentmenu",
-      "label": "-presentMenu",
-      "_callable": true,
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Menus and UI Checks",
-      "file_type": "code",
-      "metadata": {
-        "unresolved_calls": [
-          {
-            "callee": "popUpMenuPositioningItematLocationinView",
-            "receiver_type": "NSMenu",
-            "lang": "objc",
-            "line": "L404"
-          }
-        ]
-      },
-      "norm_label": "-presentmenu",
-      "source_file": "main.m",
-      "source_location": "L401"
-    },
-    {
-      "id": "profile",
-      "label": "profile.sh",
+      "id": "build",
+      "label": "build.sh",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Profiling and Resource Tools",
+      "community_name": "Product Behavior and Preview",
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "file"
       },
-      "norm_label": "profile.sh",
-      "source_file": "profile.sh",
+      "norm_label": "build.sh",
+      "source_file": "build.sh",
       "source_location": "L1"
     },
     {
-      "id": "profile_live",
-      "label": "profile-live.sh",
+      "id": "build_sh__entry",
+      "label": "build.sh script",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Profiling and Resource Tools",
+      "community_name": "Product Behavior and Preview",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "build.sh script",
+      "source_file": "build.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "test",
+      "label": "test.sh",
+      "_origin": "ast",
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "file"
       },
-      "norm_label": "profile-live.sh",
-      "source_file": "profile-live.sh",
+      "norm_label": "test.sh",
+      "source_file": "test.sh",
       "source_location": "L1"
     },
     {
-      "id": "profile_live_sh__entry",
-      "label": "profile-live.sh script",
+      "id": "test_sh__entry",
+      "label": "test.sh script",
       "_origin": "ast",
       "community": 0,
-      "community_name": "Profiling and Resource Tools",
+      "community_name": "Product Behavior and Preview",
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "bash_entrypoint"
       },
-      "norm_label": "profile-live.sh script",
-      "source_file": "profile-live.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "profile_sh__entry",
-      "label": "profile.sh script",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "profile.sh script",
-      "source_file": "profile.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_resource_sample",
-      "label": "resource-sample.c",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "norm_label": "resource-sample.c",
-      "source_file": "tests/resource-sample.c",
-      "source_location": "L1"
-    },
-    {
-      "id": "tests_ui_profile",
-      "label": "ui-profile.m",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "norm_label": "ui-profile.m",
-      "source_file": "tests/ui-profile.m",
-      "source_location": "L1"
-    },
-    {
-      "id": "tools_draw_icon",
-      "label": "draw-icon.m",
-      "_origin": "ast",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "file_type": "code",
-      "norm_label": "draw-icon.m",
-      "source_file": "tools/draw-icon.m",
+      "norm_label": "test.sh script",
+      "source_file": "test.sh",
       "source_location": "L1"
     },
     {
@@ -923,63 +927,96 @@
       "source_location": "L13"
     },
     {
-      "id": "build",
-      "label": "build.sh",
+      "id": "profile",
+      "label": "profile.sh",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "file"
       },
-      "norm_label": "build.sh",
-      "source_file": "build.sh",
+      "norm_label": "profile.sh",
+      "source_file": "profile.sh",
       "source_location": "L1"
     },
     {
-      "id": "build_sh__entry",
-      "label": "build.sh script",
+      "id": "profile_live",
+      "label": "profile-live.sh",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Build and Product Behavior",
-      "file_type": "code",
-      "metadata": {
-        "language": "bash",
-        "kind": "bash_entrypoint"
-      },
-      "norm_label": "build.sh script",
-      "source_file": "build.sh",
-      "source_location": "L1"
-    },
-    {
-      "id": "test",
-      "label": "test.sh",
-      "_origin": "ast",
-      "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "file"
       },
-      "norm_label": "test.sh",
-      "source_file": "test.sh",
+      "norm_label": "profile-live.sh",
+      "source_file": "profile-live.sh",
       "source_location": "L1"
     },
     {
-      "id": "test_sh__entry",
-      "label": "test.sh script",
+      "id": "profile_live_sh__entry",
+      "label": "profile-live.sh script",
       "_origin": "ast",
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "file_type": "code",
       "metadata": {
         "language": "bash",
         "kind": "bash_entrypoint"
       },
-      "norm_label": "test.sh script",
-      "source_file": "test.sh",
+      "norm_label": "profile-live.sh script",
+      "source_file": "profile-live.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "profile_sh__entry",
+      "label": "profile.sh script",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "file_type": "code",
+      "metadata": {
+        "language": "bash",
+        "kind": "bash_entrypoint"
+      },
+      "norm_label": "profile.sh script",
+      "source_file": "profile.sh",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_resource_sample",
+      "label": "resource-sample.c",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "file_type": "code",
+      "norm_label": "resource-sample.c",
+      "source_file": "tests/resource-sample.c",
+      "source_location": "L1"
+    },
+    {
+      "id": "tests_ui_profile",
+      "label": "ui-profile.m",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "file_type": "code",
+      "norm_label": "ui-profile.m",
+      "source_file": "tests/ui-profile.m",
+      "source_location": "L1"
+    },
+    {
+      "id": "tools_draw_icon",
+      "label": "draw-icon.m",
+      "_origin": "ast",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "file_type": "code",
+      "norm_label": "draw-icon.m",
+      "source_file": "tools/draw-icon.m",
       "source_location": "L1"
     },
     {
@@ -1159,10 +1196,65 @@
       "source_location": ""
     },
     {
+      "id": "nsglasseffectview",
+      "label": "NSGlassEffectView",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "nsglasseffectview",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nspanel",
+      "label": "NSPanel",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "nspanel",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nsvisualeffectview",
+      "label": "NSVisualEffectView",
+      "_origin": "ast",
+      "community": 5,
+      "community_name": "Card Presentation and Cleanup",
+      "file_type": "code",
+      "norm_label": "nsvisualeffectview",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "nsmenuitem",
+      "label": "NSMenuItem",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "file_type": "code",
+      "norm_label": "nsmenuitem",
+      "source_file": "",
+      "source_location": ""
+    },
+    {
+      "id": "tests_ui_check",
+      "label": "ui-check.m",
+      "_origin": "ast",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "file_type": "code",
+      "norm_label": "ui-check.m",
+      "source_file": "tests/ui-check.m",
+      "source_location": "L1"
+    },
+    {
       "id": "nsarray",
       "label": "NSArray",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "nsarray",
@@ -1173,7 +1265,7 @@
       "id": "nsstring",
       "label": "NSString",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "nsstring",
@@ -1184,7 +1276,7 @@
       "id": "nsview",
       "label": "NSView",
       "_origin": "ast",
-      "community": 5,
+      "community": 7,
       "community_name": "Card Typography and Rendering",
       "file_type": "code",
       "norm_label": "nsview",
@@ -1195,144 +1287,330 @@
       "id": "nsmutabledictionary",
       "label": "NSMutableDictionary",
       "_origin": "ast",
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
       "file_type": "code",
       "norm_label": "nsmutabledictionary",
       "source_file": "",
       "source_location": ""
     },
     {
-      "id": "nsglasseffectview",
-      "label": "NSGlassEffectView",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "norm_label": "nsglasseffectview",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "nspanel",
-      "label": "NSPanel",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "norm_label": "nspanel",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "nsvisualeffectview",
-      "label": "NSVisualEffectView",
-      "_origin": "ast",
-      "community": 7,
-      "community_name": "Frosted Card Presentation",
-      "file_type": "code",
-      "norm_label": "nsvisualeffectview",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "nsmenuitem",
-      "label": "NSMenuItem",
-      "_origin": "ast",
-      "community": 9,
-      "community_name": "Menus and UI Checks",
-      "file_type": "code",
-      "norm_label": "nsmenuitem",
-      "source_file": "",
-      "source_location": ""
-    },
-    {
-      "id": "tests_ui_profile_main",
-      "label": "UI resource-profile entry",
+      "id": "main_main",
+      "label": "InputClean application and login-command entry",
       "author": null,
       "captured_at": null,
       "community": 0,
-      "community_name": "Profiling and Resource Tools",
+      "community_name": "Product Behavior and Preview",
       "contributor": null,
       "file_type": "code",
-      "norm_label": "ui resource-profile entry",
-      "source_file": "tests/ui-profile.m",
-      "source_location": "L59",
+      "norm_label": "inputclean application and login-command entry",
+      "rationale": "Handles optional login registration commands or starts the AppKit application. Diagnostics are opt-in.",
+      "source_file": "main.m",
+      "source_location": "L471",
       "source_url": null
     },
     {
-      "id": "tools_draw_icon_main",
-      "label": "Native app icon PNG renderer",
+      "id": "readme_accessibility",
+      "label": "Accessibility permission",
       "author": null,
       "captured_at": null,
       "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "contributor": null,
-      "file_type": "code",
-      "norm_label": "native app icon png renderer",
-      "rationale": "Uses CoreGraphics and ImageIO to render a 1024-pixel teal rounded tile, white trackpad and sparkle to the supplied PNG output path.",
-      "source_file": "tools/draw-icon.m",
-      "source_location": "L5",
-      "source_url": null
-    },
-    {
-      "id": "profile_live_sampler_launcher",
-      "label": "Build and run live-session sampler",
-      "author": null,
-      "captured_at": null,
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
+      "community_name": "Product Behavior and Preview",
       "contributor": null,
       "file_type": "concept",
-      "norm_label": "build and run live-session sampler",
-      "rationale": "Compiles tests/resource-sample.c and runs its binary against the supplied app PID, writing live-performance.json.",
-      "source_file": "profile-live.sh",
-      "source_location": "L5",
-      "source_url": null
-    },
-    {
-      "id": "readme_live_sampler",
-      "label": "Live RAM and CPU session sampler",
-      "author": null,
-      "captured_at": null,
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "live ram and cpu session sampler",
-      "rationale": "Records every half-second; finishes after all three modes and ten idle seconds or after ten minutes. Cleaning values map idle=0, trackpad=1, keyboard=2, both=3. The documented ten-minute live observation remained idle throughout and does not establish RAM or CPU usage while cleaning.",
+      "norm_label": "accessibility permission",
       "source_file": "README.md",
-      "source_location": "L67",
-      "source_url": null,
-      "validation_source_location": "L63"
-    },
-    {
-      "id": "tests_resource_sample_metrics",
-      "label": "Physical footprint, lifetime peak and one-core CPU samples",
-      "author": null,
-      "captured_at": null,
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "physical footprint, lifetime peak and one-core cpu samples",
-      "source_file": "tests/resource-sample.c",
-      "source_location": "L28",
+      "source_location": "L10",
       "source_url": null
     },
     {
-      "id": "tests_resource_sample_modes",
-      "label": "Event-tap cleaning mode detection",
+      "id": "readme_cleanboth",
+      "label": "Combined keyboard and trackpad cleaning",
       "author": null,
       "captured_at": null,
       "community": 0,
-      "community_name": "Profiling and Resource Tools",
+      "community_name": "Product Behavior and Preview",
       "contributor": null,
       "file_type": "concept",
-      "norm_label": "event-tap cleaning mode detection",
-      "rationale": "Pointer and system-defined event-mask bits identify idle=0, trackpad=1, keyboard=2, both=3.",
-      "source_file": "tests/resource-sample.c",
-      "source_location": "L9",
+      "norm_label": "combined keyboard and trackpad cleaning",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "source_url": null
+    },
+    {
+      "id": "readme_cleaning_mode",
+      "label": "Trackpad-only cleaning mode",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "trackpad-only cleaning mode",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "source_url": null
+    },
+    {
+      "id": "readme_cleankeyboard",
+      "label": "Keyboard cleaning mode",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "keyboard cleaning mode",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "source_url": null
+    },
+    {
+      "id": "readme_diagnostics",
+      "label": "Opt-in aggregate input diagnostics",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "opt-in aggregate input diagnostics",
+      "rationale": "INPUTCLEAN_DIAGNOSTICS records selected modes, device sender IDs and blocked/passed counts without keystrokes or coordinates.",
+      "source_file": "README.md",
+      "source_location": "L79",
+      "source_url": null
+    },
+    {
+      "id": "readme_escape_sequence",
+      "label": "Five distinct Escape presses",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "five distinct escape presses",
+      "rationale": "Consecutive presses must be within 1.5 seconds; holding Escape does not count and another key resets the sequence. A five-minute timeout also restores input.",
+      "source_file": "README.md",
+      "source_location": "L14",
+      "source_url": null
+    },
+    {
+      "id": "readme_event_tap",
+      "label": "Temporary cleaning event filter",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "temporary cleaning event filter",
+      "rationale": "Runs only during cleaning; confines trackpad movement to the last allowed cursor position and suppresses its events. Identified mouse events return unchanged. Temporary tap interruptions resume when macOS permits.",
+      "source_file": "README.md",
+      "source_location": "L71",
+      "source_url": null
+    },
+    {
+      "id": "readme_external_mouse",
+      "label": "Native external mouse preservation",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "native external mouse preservation",
+      "rationale": "External mouse events pass through unchanged, preserving macOS sensitivity and acceleration. Trackpad input remains usable in keyboard-only mode.",
+      "source_file": "README.md",
+      "source_location": "L16",
+      "source_url": null
+    },
+    {
+      "id": "readme_keyboard_limits",
+      "label": "Keyboard and media-key filtering limits",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "keyboard and media-key filtering limits",
+      "rationale": "Ordinary keys, modifiers and media controls are blocked from all keyboards. Power, Touch ID and macOS-reserved controls remain outside app control.",
+      "source_file": "README.md",
+      "source_location": "L18",
+      "source_url": null
+    },
+    {
+      "id": "readme_logic_checks",
+      "label": "Logic, menu regression and UI checks",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "logic, menu regression and ui checks",
+      "rationale": "Checks cover distinct Esc sequences, mode-specific filtering, unchanged native mouse events, mode reuse after recovery, deferred menu activation, card layout, accessibility and resource cleanup.",
+      "source_file": "README.md",
+      "source_location": "L46",
+      "source_url": null
+    },
+    {
+      "id": "readme_login_startup",
+      "label": "Optional native login startup",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "optional native login startup",
+      "rationale": "The executable supports enable-login, disable-login and login-status. Build does not enable startup; native registration requires macOS 13 or later.",
+      "source_file": "README.md",
+      "source_location": "L24",
+      "source_url": null
+    },
+    {
+      "id": "readme_mac_mouse_fix",
+      "label": "Mac Mouse Fix device attribution reference",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "mac mouse fix device attribution reference",
+      "source_file": "README.md",
+      "source_location": "L77",
+      "source_url": "https://github.com/noah-nuebling/mac-mouse-fix/blob/master/Helper/Utility/EventUtility.m"
+    },
+    {
+      "id": "readme_trackpadclean",
+      "label": "InputClean",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "inputclean",
+      "source_file": "README.md",
+      "source_location": "L1",
+      "source_url": null
+    },
+    {
+      "id": "assets_card_preview_card_surface",
+      "label": "Dark rounded card surface with fine light border",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "dark rounded card surface with fine light border",
+      "source_file": "assets/card-preview.png",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "assets_card_preview_instruction_row",
+      "label": "Divider above muted Click to pause and Ctrl-click for options instructions",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "divider above muted click to pause and ctrl-click for options instructions",
+      "source_file": "assets/card-preview.png",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "assets_card_preview_ready_status",
+      "label": "Teal dot beside Trackpad ready status",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "teal dot beside trackpad ready status",
+      "source_file": "assets/card-preview.png",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "assets_card_preview_status_card",
+      "label": "InputClean status card preview",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "inputclean status card preview",
+      "source_file": "assets/card-preview.png",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "assets_card_preview_title",
+      "label": "Bold white InputClean title",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "bold white inputclean title",
+      "source_file": "assets/card-preview.png",
+      "source_location": null,
+      "source_url": null
+    },
+    {
+      "id": "readme_click_snapshot",
+      "label": "Capture click type and Control modifier before UI dismissal",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "rationale",
+      "norm_label": "capture click type and control modifier before ui dismissal",
+      "rationale": "Click type and the Control modifier are captured before hiding the hover card so dismissal cannot change the chosen icon action. Control-click provides the mode menu when trackpad secondary click is unavailable.",
+      "source_file": "README.md",
+      "source_location": "L75",
+      "source_url": null
+    },
+    {
+      "id": "readme_device_routing",
+      "label": "CGEvent sender field 87 and IORegistry routing",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "rationale",
+      "norm_label": "cgevent sender field 87 and ioregistry routing",
+      "rationale": "Unknown pointing-device sources are suppressed, which may block drivers or generated pointer events that hide their hardware source. Escape remains available for recovery.",
+      "source_file": "README.md",
+      "source_location": "L77",
+      "source_url": null
+    },
+    {
+      "id": "readme_ui_lifetime",
+      "label": "Glass card, IOSurface and deferred-window cleanup",
+      "author": null,
+      "captured_at": null,
+      "community": 0,
+      "community_name": "Product Behavior and Preview",
+      "contributor": null,
+      "file_type": "rationale",
+      "norm_label": "glass card, iosurface and deferred-window cleanup",
+      "rationale": "Clear Liquid Glass on macOS 26+ has a translucent popover fallback. One IOSurface draws system typography. Temporary surfaces and window are released on dismissal, and a local event wakes AppKit to drain deferred resources. A space-efficient allocator reduces retained heap memory; no repeating cursor polling timer exists.",
+      "source_file": "README.md",
+      "source_location": "L65",
       "source_url": null
     },
     {
@@ -1359,7 +1637,7 @@
       "contributor": null,
       "file_type": "code",
       "norm_label": "logic check entry",
-      "rationale": "Checks Escape sequence semantics, mode-specific filters, event masks and byte-for-byte native mouse event preservation.",
+      "rationale": "Checks Escape sequences, mode-specific filters, event masks, right-click and Control-click menu classification, and byte-for-byte native mouse preservation.",
       "source_file": "check.m",
       "source_location": "L6",
       "source_url": null
@@ -1389,7 +1667,7 @@
       "file_type": "code",
       "norm_label": "filterinput",
       "source_file": "main.m",
-      "source_location": "L208",
+      "source_location": "L218",
       "source_url": null
     },
     {
@@ -1403,7 +1681,7 @@
       "file_type": "code",
       "norm_label": "ismouseevent",
       "source_file": "main.m",
-      "source_location": "L76",
+      "source_location": "L80",
       "source_url": null
     },
     {
@@ -1417,7 +1695,7 @@
       "file_type": "code",
       "norm_label": "ismousesender",
       "source_file": "main.m",
-      "source_location": "L49",
+      "source_location": "L53",
       "source_url": null
     },
     {
@@ -1449,6 +1727,34 @@
       "source_url": null
     },
     {
+      "id": "main_modemenuclick",
+      "label": "ModeMenuClick",
+      "author": null,
+      "captured_at": null,
+      "community": 1,
+      "community_name": "Input Filtering and Startup",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "modemenuclick",
+      "source_file": "main.m",
+      "source_location": "L49",
+      "source_url": null
+    },
+    {
+      "id": "main_modestatus",
+      "label": "ModeStatus",
+      "author": null,
+      "captured_at": null,
+      "community": 1,
+      "community_name": "Input Filtering and Startup",
+      "contributor": null,
+      "file_type": "code",
+      "norm_label": "modestatus",
+      "source_file": "main.m",
+      "source_location": "L45",
+      "source_url": null
+    },
+    {
       "id": "main_statusicon",
       "label": "StatusIcon",
       "author": null,
@@ -1459,467 +1765,211 @@
       "file_type": "code",
       "norm_label": "statusicon",
       "source_file": "main.m",
-      "source_location": "L89",
+      "source_location": "L93",
       "source_url": null
     },
     {
-      "id": "main_main",
-      "label": "Application and login-command entry",
+      "id": "tests_ui_profile_main",
+      "label": "UI resource-profile entry",
       "author": null,
       "captured_at": null,
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "contributor": null,
       "file_type": "code",
-      "norm_label": "application and login-command entry",
-      "source_file": "main.m",
-      "source_location": "L447",
+      "norm_label": "ui resource-profile entry",
+      "source_file": "tests/ui-profile.m",
+      "source_location": "L59",
       "source_url": null
     },
     {
-      "id": "readme_accessibility",
-      "label": "Accessibility permission",
+      "id": "tools_draw_icon_main",
+      "label": "Native keyboard, trackpad, cursor and sparkle PNG renderer",
       "author": null,
       "captured_at": null,
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "contributor": null,
-      "file_type": "concept",
-      "norm_label": "accessibility permission",
-      "source_file": "README.md",
-      "source_location": "L10",
+      "file_type": "code",
+      "norm_label": "native keyboard, trackpad, cursor and sparkle png renderer",
+      "rationale": "Uses CoreGraphics and ImageIO to render a teal rounded tile, keyboard, recessed trackpad, overlapping cursor and cleaning sparkle to the supplied PNG path.",
+      "source_file": "tools/draw-icon.m",
+      "source_location": "L5",
       "source_url": null
     },
     {
-      "id": "readme_cleanboth",
-      "label": "Combined keyboard and trackpad cleaning",
+      "id": "profile_live_sampler_launcher",
+      "label": "Build and run live-session sampler",
       "author": null,
       "captured_at": null,
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "contributor": null,
       "file_type": "concept",
-      "norm_label": "combined keyboard and trackpad cleaning",
-      "source_file": "README.md",
-      "source_location": "L11",
+      "norm_label": "build and run live-session sampler",
+      "rationale": "Compiles tests/resource-sample.c and runs its binary against the supplied app PID, writing live-performance.json.",
+      "source_file": "profile-live.sh",
+      "source_location": "L5",
       "source_url": null
     },
     {
-      "id": "readme_cleaning_mode",
-      "label": "Trackpad cleaning mode",
+      "id": "readme_live_sampler",
+      "label": "Live RAM and CPU session sampler",
       "author": null,
       "captured_at": null,
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "contributor": null,
       "file_type": "concept",
-      "norm_label": "trackpad cleaning mode",
+      "norm_label": "live ram and cpu session sampler",
+      "rationale": "Records every half-second; finishes after all three modes and ten idle seconds or after ten minutes. Cleaning values map idle=0, trackpad=1, keyboard=2, both=3.",
       "source_file": "README.md",
-      "source_location": "L11",
+      "source_location": "L67",
       "source_url": null
     },
     {
-      "id": "readme_cleankeyboard",
-      "label": "Keyboard cleaning mode",
+      "id": "tests_resource_sample_metrics",
+      "label": "Physical footprint, lifetime peak and one-core CPU samples",
       "author": null,
       "captured_at": null,
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "contributor": null,
       "file_type": "concept",
-      "norm_label": "keyboard cleaning mode",
-      "source_file": "README.md",
-      "source_location": "L11",
+      "norm_label": "physical footprint, lifetime peak and one-core cpu samples",
+      "source_file": "tests/resource-sample.c",
+      "source_location": "L28",
       "source_url": null
     },
     {
-      "id": "readme_diagnostics",
-      "label": "Opt-in aggregate input diagnostics",
+      "id": "tests_resource_sample_modes",
+      "label": "Event-tap cleaning mode detection",
       "author": null,
       "captured_at": null,
       "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community_name": "Sampling and Icon Rendering",
       "contributor": null,
       "file_type": "concept",
-      "norm_label": "opt-in aggregate input diagnostics",
-      "rationale": "TRACKPADCLEAN_DIAGNOSTICS records device sender IDs and blocked/passed counts without keystrokes or coordinates.",
-      "source_file": "README.md",
-      "source_location": "L75",
+      "norm_label": "event-tap cleaning mode detection",
+      "rationale": "Pointer and system-defined event-mask bits identify idle=0, trackpad=1, keyboard=2, both=3.",
+      "source_file": "tests/resource-sample.c",
+      "source_location": "L9",
       "source_url": null
     },
     {
-      "id": "readme_escape_sequence",
-      "label": "Five distinct Escape presses",
+      "id": "tests_ui_check_main",
+      "label": "Menu mode regression, card layout and cleanup entry",
       "author": null,
       "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
       "contributor": null,
-      "file_type": "concept",
-      "norm_label": "five distinct escape presses",
-      "rationale": "Consecutive presses must be within 1.5 seconds; holding Escape does not count and another key resets the sequence. A five-minute timeout also restores input.",
-      "source_file": "README.md",
-      "source_location": "L14",
+      "file_type": "code",
+      "norm_label": "menu mode regression, card layout and cleanup entry",
+      "rationale": "ModeProbe asserts no start during menuOpen; regression selects a mode, stops and toggles, then verifies reuse. It also drives menu tracking and checks card text, accessibility and cleanup. This is regression coverage, not physical menu validation.",
+      "source_file": "tests/ui-check.m",
+      "source_location": "L12",
       "source_url": null
     },
     {
-      "id": "readme_event_tap",
-      "label": "Temporary cleaning event filter",
+      "id": "readme_deferred_activation",
+      "label": "Deferred activation after menu tracking",
       "author": null,
       "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
       "contributor": null,
-      "file_type": "concept",
-      "norm_label": "temporary cleaning event filter",
-      "rationale": "Runs only during cleaning; confines trackpad movement to the last allowed cursor position and suppresses its events. Identified mouse events return unchanged. Temporary tap interruptions resume when macOS permits.",
-      "source_file": "README.md",
-      "source_location": "L71",
-      "source_url": null
-    },
-    {
-      "id": "readme_external_mouse",
-      "label": "Native external mouse preservation",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "native external mouse preservation",
-      "rationale": "External mouse events pass through unchanged, preserving macOS sensitivity and acceleration.",
-      "source_file": "README.md",
-      "source_location": "L16",
-      "source_url": null
-    },
-    {
-      "id": "readme_keyboard_limits",
-      "label": "Keyboard and media-key filtering limits",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "keyboard and media-key filtering limits",
-      "rationale": "Ordinary keys, modifiers and media controls are blocked from all keyboards. Power, Touch ID and macOS-reserved controls remain outside the app control.",
-      "source_file": "README.md",
-      "source_location": "L18",
-      "source_url": null
-    },
-    {
-      "id": "readme_logic_checks",
-      "label": "Logic and UI checks",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "logic and ui checks",
-      "source_file": "README.md",
-      "source_location": "L46",
-      "source_url": null,
-      "rationale": "Automated callback checks pass for keyboard and combined cleaning modes; their physical confirmation remains pending. Trackpad blocking, native mouse sensitivity, and recovery were physically checked during development.",
-      "validation_source_location": "L63"
-    },
-    {
-      "id": "readme_login_startup",
-      "label": "Optional native login startup",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "optional native login startup",
-      "rationale": "The executable supports enable-login, disable-login and login-status. Build does not enable startup; native registration requires macOS 13 or later.",
-      "source_file": "README.md",
-      "source_location": "L24",
-      "source_url": null
-    },
-    {
-      "id": "readme_mac_mouse_fix",
-      "label": "Mac Mouse Fix device attribution reference",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "mac mouse fix device attribution reference",
+      "file_type": "rationale",
+      "norm_label": "deferred activation after menu tracking",
+      "rationale": "Menu selections start the filter after AppKit exits its tracking loop. The ModeProbe regression asserts that startCleaning never runs while menuOpen and verifies reuse after stop/toggle. README records physical keyboard blocking, five-Esc recovery, trackpad blocking and native mouse behavior as checked; the final Control-click menu and combined mode remain awaiting confirmation.",
       "source_file": "README.md",
       "source_location": "L73",
-      "source_url": "https://github.com/noah-nuebling/mac-mouse-fix/blob/master/Helper/Utility/EventUtility.m"
-    },
-    {
-      "id": "readme_trackpadclean",
-      "label": "TrackpadClean",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "concept",
-      "norm_label": "trackpadclean",
-      "source_file": "README.md",
-      "source_location": "L1",
       "source_url": null
     },
     {
-      "id": "appicon_trackpad_icon",
-      "label": "Teal rounded-square icon with white trackpad and sparkle",
+      "id": "readme_selected_mode",
+      "label": "Session-selected cleaning mode retention",
       "author": null,
       "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
+      "community": 8,
+      "community_name": "Cleaning Mode Selection",
+      "contributor": null,
+      "file_type": "concept",
+      "norm_label": "session-selected cleaning mode retention",
+      "rationale": "Trackpad-only is the initial default. A menu choice controls subsequent icon toggles for the current session, including after input is restored.",
+      "source_file": "README.md",
+      "source_location": "L11",
+      "source_url": null
+    },
+    {
+      "id": "appicon_cursor",
+      "label": "Dark pointer cursor with white outline at the lower right",
+      "author": null,
+      "captured_at": null,
+      "community": 9,
+      "community_name": "Application Icon Design",
       "contributor": null,
       "file_type": "image",
-      "norm_label": "teal rounded-square icon with white trackpad and sparkle",
+      "norm_label": "dark pointer cursor with white outline at the lower right",
       "source_file": "AppIcon.png",
       "source_location": null,
       "source_url": null
     },
     {
-      "id": "readme_device_routing",
-      "label": "CGEvent sender field 87 and IORegistry routing",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "rationale",
-      "norm_label": "cgevent sender field 87 and ioregistry routing",
-      "rationale": "Unknown pointing-device sources are suppressed, which may block drivers or generated pointer events that hide their hardware source. Escape remains available for recovery.",
-      "source_file": "README.md",
-      "source_location": "L73",
-      "source_url": null
-    },
-    {
-      "id": "readme_ui_lifetime",
-      "label": "Glass card, IOSurface and deferred-window cleanup",
-      "author": null,
-      "captured_at": null,
-      "community": 2,
-      "community_name": "Build and Product Behavior",
-      "contributor": null,
-      "file_type": "rationale",
-      "norm_label": "glass card, iosurface and deferred-window cleanup",
-      "rationale": "Clear Liquid Glass on macOS 26+ has a translucent popover fallback. One IOSurface draws system typography. Temporary surfaces and window are released on dismissal, and a local event wakes AppKit to drain deferred resources. A space-efficient allocator reduces retained heap memory; no repeating cursor polling timer exists.",
-      "source_file": "README.md",
-      "source_location": "L65",
-      "source_url": null
-    },
-    {
-      "id": "main_modestatus",
-      "label": "ModeStatus",
-      "author": null,
-      "captured_at": null,
-      "community": 6,
-      "community_name": "Cleaning Mode Transitions",
-      "contributor": null,
-      "file_type": "code",
-      "norm_label": "modestatus",
-      "source_file": "main.m",
-      "source_location": "L45",
-      "source_url": null
-    },
-    {
-      "id": "assets_card_preview_card_surface",
-      "label": "Dark rounded card surface with fine light border",
-      "author": null,
-      "captured_at": null,
-      "community": 8,
-      "community_name": "Card Preview Design",
-      "contributor": null,
-      "file_type": "image",
-      "norm_label": "dark rounded card surface with fine light border",
-      "source_file": "assets/card-preview.png",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "assets_card_preview_instruction_row",
-      "label": "Divider above muted Click to pause and Esc ×5 to restore instructions",
-      "author": null,
-      "captured_at": null,
-      "community": 8,
-      "community_name": "Card Preview Design",
-      "contributor": null,
-      "file_type": "image",
-      "norm_label": "divider above muted click to pause and esc ×5 to restore instructions",
-      "source_file": "assets/card-preview.png",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "assets_card_preview_ready_status",
-      "label": "Teal dot beside Ready to clean status",
-      "author": null,
-      "captured_at": null,
-      "community": 8,
-      "community_name": "Card Preview Design",
-      "contributor": null,
-      "file_type": "image",
-      "norm_label": "teal dot beside ready to clean status",
-      "source_file": "assets/card-preview.png",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "assets_card_preview_status_card",
-      "label": "TrackpadClean status card preview",
-      "author": null,
-      "captured_at": null,
-      "community": 8,
-      "community_name": "Card Preview Design",
-      "contributor": null,
-      "file_type": "image",
-      "norm_label": "trackpadclean status card preview",
-      "source_file": "assets/card-preview.png",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "assets_card_preview_title",
-      "label": "Bold white TrackpadClean title",
-      "author": null,
-      "captured_at": null,
-      "community": 8,
-      "community_name": "Card Preview Design",
-      "contributor": null,
-      "file_type": "image",
-      "norm_label": "bold white trackpadclean title",
-      "source_file": "assets/card-preview.png",
-      "source_location": null,
-      "source_url": null
-    },
-    {
-      "id": "tests_ui_check",
-      "label": "ui-check.m",
+      "id": "appicon_keyboard",
+      "label": "White keyboard body with two rows of teal keys and a space bar",
       "author": null,
       "captured_at": null,
       "community": 9,
-      "community_name": "Menus and UI Checks",
+      "community_name": "Application Icon Design",
       "contributor": null,
-      "file_type": "code",
-      "norm_label": "ui-check.m",
-      "source_file": "tests/ui-check.m",
-      "source_location": "L1",
+      "file_type": "image",
+      "norm_label": "white keyboard body with two rows of teal keys and a space bar",
+      "source_file": "AppIcon.png",
+      "source_location": null,
       "source_url": null
     },
     {
-      "id": "tests_ui_check_main",
-      "label": "UI layout and cleanup check entry",
+      "id": "appicon_sparkle",
+      "label": "White four-point sparkle above the keyboard upper right corner",
       "author": null,
       "captured_at": null,
       "community": 9,
-      "community_name": "Menus and UI Checks",
+      "community_name": "Application Icon Design",
       "contributor": null,
-      "file_type": "code",
-      "norm_label": "ui layout and cleanup check entry",
-      "source_file": "tests/ui-check.m",
-      "source_location": "L6",
+      "file_type": "image",
+      "norm_label": "white four-point sparkle above the keyboard upper right corner",
+      "source_file": "AppIcon.png",
+      "source_location": null,
       "source_url": null
     },
     {
-      "id": "coregraphics",
-      "label": "coregraphics",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "coregraphics",
-      "source_file": "",
-      "type": "external"
+      "id": "appicon_trackpad",
+      "label": "Pale inset trackpad with rounded teal outline",
+      "author": null,
+      "captured_at": null,
+      "community": 9,
+      "community_name": "Application Icon Design",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "pale inset trackpad with rounded teal outline",
+      "source_file": "AppIcon.png",
+      "source_location": null,
+      "source_url": null
     },
     {
-      "id": "foundation",
-      "label": "foundation",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "foundation",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "imageio",
-      "label": "imageio",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "imageio",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "libproc",
-      "label": "libproc",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "libproc",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "resource",
-      "label": "resource",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "resource",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "stdio",
-      "label": "stdio",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "stdio",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "stdlib",
-      "label": "stdlib",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "stdlib",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "time",
-      "label": "time",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "time",
-      "source_file": "",
-      "type": "external"
-    },
-    {
-      "id": "unistd",
-      "label": "unistd",
-      "community": 0,
-      "community_name": "Profiling and Resource Tools",
-      "external": true,
-      "file_type": "concept",
-      "norm_label": "unistd",
-      "source_file": "",
-      "type": "external"
+      "id": "appicon_trackpad_icon",
+      "label": "InputClean teal icon with keyboard, trackpad, cursor, and sparkle",
+      "author": null,
+      "captured_at": null,
+      "community": 9,
+      "community_name": "Application Icon Design",
+      "contributor": null,
+      "file_type": "image",
+      "norm_label": "inputclean teal icon with keyboard, trackpad, cursor, and sparkle",
+      "source_file": "AppIcon.png",
+      "source_location": null,
+      "source_url": null
     },
     {
       "id": "appkit",
@@ -2041,6 +2091,116 @@
       "norm_label": "string",
       "source_file": "",
       "type": "external"
+    },
+    {
+      "id": "coregraphics",
+      "label": "coregraphics",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "coregraphics",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "foundation",
+      "label": "foundation",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "foundation",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "imageio",
+      "label": "imageio",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "imageio",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "libproc",
+      "label": "libproc",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "libproc",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "resource",
+      "label": "resource",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "resource",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "stdio",
+      "label": "stdio",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "stdio",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "stdlib",
+      "label": "stdlib",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "stdlib",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "time",
+      "label": "time",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "time",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "unistd",
+      "label": "unistd",
+      "community": 2,
+      "community_name": "Sampling and Icon Rendering",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "unistd",
+      "source_file": "",
+      "type": "external"
+    },
+    {
+      "id": "assert",
+      "label": "assert",
+      "community": 6,
+      "community_name": "Mode Menu Regression",
+      "external": true,
+      "file_type": "concept",
+      "norm_label": "assert",
+      "source_file": "",
+      "type": "external"
     }
   ],
   "links": [
@@ -2053,7 +2213,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L154",
+      "source_location": "L162",
       "weight": 1.0
     },
     {
@@ -2065,7 +2225,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L275",
+      "source_location": "L286",
       "weight": 1.0
     },
     {
@@ -2077,7 +2237,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L443",
+      "source_location": "L467",
       "weight": 1.0
     },
     {
@@ -2089,7 +2249,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L308",
+      "source_location": "L322",
       "weight": 1.0
     },
     {
@@ -2101,7 +2261,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L310",
+      "source_location": "L324",
       "weight": 1.0
     },
     {
@@ -2113,7 +2273,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L313",
+      "source_location": "L327",
       "weight": 1.0
     },
     {
@@ -2125,7 +2285,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L440",
+      "source_location": "L464",
       "weight": 1.0
     },
     {
@@ -2137,7 +2297,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L281",
+      "source_location": "L292",
       "weight": 1.0
     },
     {
@@ -2149,7 +2309,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L393",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -2161,7 +2321,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L298",
+      "source_location": "L309",
       "weight": 1.0
     },
     {
@@ -2173,7 +2333,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L301",
+      "source_location": "L312",
       "weight": 1.0
     },
     {
@@ -2185,7 +2345,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L438",
+      "source_location": "L462",
       "weight": 1.0
     },
     {
@@ -2197,7 +2357,19 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L402",
+      "source_location": "L423",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_presentmenu",
+      "target": "main_cleanapp_startcleaning",
+      "relation": "calls",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "call",
+      "source_file": "main.m",
+      "source_location": "L430",
       "weight": 1.0
     },
     {
@@ -2209,7 +2381,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L379",
+      "source_location": "L397",
       "weight": 1.0
     },
     {
@@ -2221,7 +2393,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L380",
+      "source_location": "L400",
       "weight": 1.0
     },
     {
@@ -2233,7 +2405,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L291",
+      "source_location": "L302",
       "weight": 1.0
     },
     {
@@ -2245,7 +2417,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L292",
+      "source_location": "L303",
       "weight": 1.0
     },
     {
@@ -2257,7 +2429,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L304",
+      "source_location": "L316",
       "weight": 1.0
     },
     {
@@ -2269,7 +2441,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L329",
+      "source_location": "L343",
       "weight": 1.0
     },
     {
@@ -2281,7 +2453,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L341",
+      "source_location": "L355",
       "weight": 1.0
     },
     {
@@ -2293,7 +2465,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L342",
+      "source_location": "L356",
       "weight": 1.0
     },
     {
@@ -2305,7 +2477,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L374",
+      "source_location": "L389",
       "weight": 1.0
     },
     {
@@ -2317,7 +2489,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L318",
+      "source_location": "L332",
       "weight": 1.0
     },
     {
@@ -2329,7 +2501,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L320",
+      "source_location": "L334",
       "weight": 1.0
     },
     {
@@ -2521,7 +2693,7 @@
       "confidence_score": 1.0,
       "context": "call",
       "source_file": "main.m",
-      "source_location": "L438",
+      "source_location": "L462",
       "weight": 1.0
     },
     {
@@ -2569,7 +2741,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "main.m",
-      "source_location": "L128",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -2581,7 +2753,7 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "main.m",
-      "source_location": "L128",
+      "source_location": "L136",
       "weight": 1.0
     },
     {
@@ -2593,72 +2765,12 @@
       "confidence_score": 1.0,
       "context": "field",
       "source_file": "main.m",
-      "source_location": "L185",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "nsimage",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L186",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "nsimage",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L187",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "nstimer",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L188",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "nstimer",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L189",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "main_cleanmode",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
       "source_location": "L193",
       "weight": 1.0
     },
     {
       "source": "main_cleanapp",
-      "target": "nsmutabledictionary",
+      "target": "nsimage",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2670,19 +2782,7 @@
     },
     {
       "source": "main_cleanapp",
-      "target": "nsnumber",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L194",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "cfmachportref",
+      "target": "nsimage",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2694,7 +2794,7 @@
     },
     {
       "source": "main_cleanapp",
-      "target": "cfrunloopsourceref",
+      "target": "nstimer",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2706,7 +2806,7 @@
     },
     {
       "source": "main_cleanapp",
-      "target": "nspanel",
+      "target": "nstimer",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2718,43 +2818,7 @@
     },
     {
       "source": "main_cleanapp",
-      "target": "main_cardview",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L198",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "nspoint",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L199",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "main_m_nsuinteger",
-      "relation": "references",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "context": "field",
-      "source_file": "main.m",
-      "source_location": "L200",
-      "weight": 1.0
-    },
-    {
-      "source": "main_cleanapp",
-      "target": "main_m_nsuinteger",
+      "target": "main_cleanmode",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2766,7 +2830,7 @@
     },
     {
       "source": "main_cleanapp",
-      "target": "cgpoint",
+      "target": "main_cleanmode",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2778,7 +2842,7 @@
     },
     {
       "source": "main_cleanapp",
-      "target": "nsmenu",
+      "target": "main_cleanmode",
       "relation": "references",
       "_origin": "ast",
       "confidence": "EXTRACTED",
@@ -2786,6 +2850,138 @@
       "context": "field",
       "source_file": "main.m",
       "source_location": "L203",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "nsmutabledictionary",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "nsnumber",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L204",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "cfmachportref",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L205",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "cfrunloopsourceref",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L206",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "nspanel",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L207",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "main_cardview",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L208",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "nspoint",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L209",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "main_m_nsuinteger",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L210",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "main_m_nsuinteger",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L211",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "cgpoint",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L212",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "nsmenu",
+      "relation": "references",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "field",
+      "source_file": "main.m",
+      "source_location": "L213",
       "weight": 1.0
     },
     {
@@ -3065,6 +3261,30 @@
       "weight": 1.0
     },
     {
+      "source": "tests_ui_check",
+      "target": "main",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/ui-check.m",
+      "source_location": "L2",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check",
+      "target": "assert",
+      "relation": "imports",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "context": "import",
+      "source_file": "tests/ui-check.m",
+      "source_location": "L4",
+      "weight": 1.0
+    },
+    {
       "source": "tests_ui_profile",
       "target": "main",
       "relation": "imports",
@@ -3157,7 +3377,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L272",
+      "source_location": "L283",
       "weight": 1.0
     },
     {
@@ -3169,7 +3389,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L386",
+      "source_location": "L407",
       "weight": 1.0
     },
     {
@@ -3181,7 +3401,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L393",
+      "source_location": "L414",
       "weight": 1.0
     },
     {
@@ -3193,7 +3413,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L397",
+      "source_location": "L418",
       "weight": 1.0
     },
     {
@@ -3205,7 +3425,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L411",
+      "source_location": "L435",
       "weight": 1.0
     },
     {
@@ -3217,7 +3437,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L419",
+      "source_location": "L443",
       "weight": 1.0
     },
     {
@@ -3229,7 +3449,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L422",
+      "source_location": "L446",
       "weight": 1.0
     },
     {
@@ -3241,7 +3461,7 @@
       "confidence_score": 1.0,
       "context": "type",
       "source_file": "main.m",
-      "source_location": "L426",
+      "source_location": "L450",
       "weight": 1.0
     },
     {
@@ -3290,17 +3510,6 @@
     },
     {
       "source": "main",
-      "target": "main_cardview",
-      "relation": "contains",
-      "_origin": "ast",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "main.m",
-      "source_location": "L127",
-      "weight": 1.0
-    },
-    {
-      "source": "main",
       "target": "main_cleanmode",
       "relation": "contains",
       "_origin": "ast",
@@ -3312,13 +3521,24 @@
     },
     {
       "source": "main",
+      "target": "main_cardview",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.m",
+      "source_location": "L135",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
       "target": "main_cleanapp",
       "relation": "contains",
       "_origin": "ast",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L184",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -3388,6 +3608,17 @@
       "weight": 1.0
     },
     {
+      "source": "tests_ui_check",
+      "target": "tests_ui_check_modeprobe",
+      "relation": "contains",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L6",
+      "weight": 1.0
+    },
+    {
       "source": "tests_ui_profile",
       "target": "tests_ui_profile_uiprofile",
       "relation": "contains",
@@ -3406,7 +3637,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L184",
+      "source_location": "L192",
       "weight": 1.0
     },
     {
@@ -3417,7 +3648,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L127",
+      "source_location": "L135",
       "weight": 1.0
     },
     {
@@ -3428,7 +3659,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L184",
+      "source_location": "L192",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_modeprobe",
+      "target": "main_cleanapp",
+      "relation": "inherits",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L6",
       "weight": 1.0
     },
     {
@@ -3450,7 +3692,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L134",
+      "source_location": "L142",
       "weight": 1.0
     },
     {
@@ -3461,7 +3703,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L135",
+      "source_location": "L143",
       "weight": 1.0
     },
     {
@@ -3472,7 +3714,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L136",
+      "source_location": "L144",
       "weight": 1.0
     },
     {
@@ -3483,7 +3725,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L137",
+      "source_location": "L145",
       "weight": 1.0
     },
     {
@@ -3494,7 +3736,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L162",
+      "source_location": "L170",
       "weight": 1.0
     },
     {
@@ -3505,7 +3747,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L204",
+      "source_location": "L214",
       "weight": 1.0
     },
     {
@@ -3516,7 +3758,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L205",
+      "source_location": "L215",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp",
+      "target": "main_cleanapp_init",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.m",
+      "source_location": "L271",
       "weight": 1.0
     },
     {
@@ -3527,7 +3780,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L261",
+      "source_location": "L272",
       "weight": 1.0
     },
     {
@@ -3538,7 +3791,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L278",
+      "source_location": "L289",
       "weight": 1.0
     },
     {
@@ -3549,7 +3802,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L290",
+      "source_location": "L301",
       "weight": 1.0
     },
     {
@@ -3560,7 +3813,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L294",
+      "source_location": "L305",
       "weight": 1.0
     },
     {
@@ -3571,7 +3824,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L301",
+      "source_location": "L312",
       "weight": 1.0
     },
     {
@@ -3582,7 +3835,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L302",
+      "source_location": "L313",
       "weight": 1.0
     },
     {
@@ -3593,7 +3846,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L306",
+      "source_location": "L318",
       "weight": 1.0
     },
     {
@@ -3604,7 +3857,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L315",
+      "source_location": "L329",
       "weight": 1.0
     },
     {
@@ -3615,7 +3868,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L322",
+      "source_location": "L336",
       "weight": 1.0
     },
     {
@@ -3626,7 +3879,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L360",
+      "source_location": "L374",
       "weight": 1.0
     },
     {
@@ -3637,7 +3890,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L377",
+      "source_location": "L392",
       "weight": 1.0
     },
     {
@@ -3648,7 +3901,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L382",
+      "source_location": "L403",
       "weight": 1.0
     },
     {
@@ -3659,7 +3912,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L401",
+      "source_location": "L422",
       "weight": 1.0
     },
     {
@@ -3670,7 +3923,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L408",
+      "source_location": "L432",
       "weight": 1.0
     },
     {
@@ -3681,7 +3934,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L440",
+      "source_location": "L464",
       "weight": 1.0
     },
     {
@@ -3692,7 +3945,18 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L441",
+      "source_location": "L465",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_modeprobe",
+      "target": "tests_ui_check_modeprobe_startcleaning",
+      "relation": "method",
+      "_origin": "ast",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L9",
       "weight": 1.0
     },
     {
@@ -3784,12 +4048,22 @@
     },
     {
       "source": "check_main",
+      "target": "main_modemenuclick",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "check.m",
+      "source_location": "L28",
+      "weight": 1.0
+    },
+    {
+      "source": "check_main",
       "target": "main_filterinput",
       "relation": "calls",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "check.m",
-      "source_location": "L38",
+      "source_location": "L42",
       "weight": 1.0
     },
     {
@@ -3799,7 +4073,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "check.m",
-      "source_location": "L49",
+      "source_location": "L53",
       "weight": 1.0
     },
     {
@@ -3819,7 +4093,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L263",
+      "source_location": "L274",
       "weight": 1.0
     },
     {
@@ -3829,7 +4103,27 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L264",
+      "source_location": "L275",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_clicked",
+      "target": "main_modemenuclick",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.m",
+      "source_location": "L321",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_presentmenu",
+      "target": "main_cleanapp_startcleaning",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.m",
+      "source_location": "L430",
       "weight": 1.0
     },
     {
@@ -3839,7 +4133,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L334",
+      "source_location": "L348",
       "weight": 1.0
     },
     {
@@ -3849,7 +4143,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L354",
+      "source_location": "L368",
       "weight": 1.0
     },
     {
@@ -3859,7 +4153,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L218",
+      "source_location": "L228",
       "weight": 1.0
     },
     {
@@ -3869,7 +4163,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L223",
+      "source_location": "L233",
       "weight": 1.0
     },
     {
@@ -3879,7 +4173,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L226",
+      "source_location": "L236",
       "weight": 1.0
     },
     {
@@ -3889,7 +4183,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L242",
+      "source_location": "L252",
       "weight": 1.0
     },
     {
@@ -3899,7 +4193,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L244",
+      "source_location": "L254",
       "weight": 1.0
     },
     {
@@ -3909,7 +4203,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L82",
+      "source_location": "L86",
       "weight": 1.0
     },
     {
@@ -3929,7 +4223,47 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/ui-check.m",
-      "source_location": "L10",
+      "source_location": "L16",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_main",
+      "target": "main_cleanapp_selectmode",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L21",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_main",
+      "target": "main_cleanapp_stopcleaning",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_main",
+      "target": "main_cleanapp_togglecleaning",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L23",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_main",
+      "target": "main_cleanapp_presentmenu",
+      "relation": "calls",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L36",
       "weight": 1.0
     },
     {
@@ -3939,7 +4273,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/ui-check.m",
-      "source_location": "L19",
+      "source_location": "L47",
       "weight": 1.0
     },
     {
@@ -3949,7 +4283,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/ui-check.m",
-      "source_location": "L28",
+      "source_location": "L56",
       "weight": 1.0
     },
     {
@@ -3959,7 +4293,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L73",
+      "source_location": "L77",
       "weight": 1.0
     },
     {
@@ -3990,6 +4324,46 @@
       "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": "L11",
+      "weight": 1.0
+    },
+    {
+      "source": "appicon_trackpad_icon",
+      "target": "appicon_cursor",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AppIcon.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "appicon_trackpad_icon",
+      "target": "appicon_keyboard",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AppIcon.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "appicon_trackpad_icon",
+      "target": "appicon_sparkle",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AppIcon.png",
+      "source_location": null,
+      "weight": 1.0
+    },
+    {
+      "source": "appicon_trackpad_icon",
+      "target": "appicon_trackpad",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "AppIcon.png",
+      "source_location": null,
       "weight": 1.0
     },
     {
@@ -4069,7 +4443,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L208",
+      "source_location": "L218",
       "weight": 1.0
     },
     {
@@ -4094,16 +4468,6 @@
     },
     {
       "source": "main",
-      "target": "main_main",
-      "relation": "references",
-      "confidence": "EXTRACTED",
-      "confidence_score": 1.0,
-      "source_file": "main.m",
-      "source_location": "L447",
-      "weight": 1.0
-    },
-    {
-      "source": "main",
       "target": "main_modestatus",
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -4114,7 +4478,17 @@
     },
     {
       "source": "main",
-      "target": "main_ismousesender",
+      "target": "main_main",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.m",
+      "source_location": "L471",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
+      "target": "main_modemenuclick",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4124,12 +4498,22 @@
     },
     {
       "source": "main",
+      "target": "main_ismousesender",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "main.m",
+      "source_location": "L53",
+      "weight": 1.0
+    },
+    {
+      "source": "main",
       "target": "main_ismouseevent",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L76",
+      "source_location": "L80",
       "weight": 1.0
     },
     {
@@ -4139,7 +4523,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L89",
+      "source_location": "L93",
       "weight": 1.0
     },
     {
@@ -4149,7 +4533,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L334",
+      "source_location": "L348",
       "weight": 1.0
     },
     {
@@ -4159,7 +4543,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "main.m",
-      "source_location": "L470",
+      "source_location": "L494",
       "weight": 1.0
     },
     {
@@ -4239,7 +4623,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
-      "source_location": "L12",
+      "source_location": "L16",
       "weight": 1.0
     },
     {
@@ -4280,6 +4664,16 @@
       "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": "L10",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_trackpadclean",
+      "target": "readme_selected_mode",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L11",
       "weight": 1.0
     },
     {
@@ -4344,6 +4738,16 @@
     },
     {
       "source": "readme_trackpadclean",
+      "target": "assets_card_preview_status_card",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L5",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_trackpadclean",
       "target": "readme_ui_lifetime",
       "relation": "references",
       "confidence": "EXTRACTED",
@@ -4374,7 +4778,7 @@
     },
     {
       "source": "readme_trackpadclean",
-      "target": "readme_device_routing",
+      "target": "readme_deferred_activation",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
@@ -4384,12 +4788,32 @@
     },
     {
       "source": "readme_trackpadclean",
-      "target": "readme_diagnostics",
+      "target": "readme_click_snapshot",
       "relation": "references",
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "README.md",
       "source_location": "L75",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_trackpadclean",
+      "target": "readme_device_routing",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L77",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_trackpadclean",
+      "target": "readme_diagnostics",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "README.md",
+      "source_location": "L79",
       "weight": 1.0
     },
     {
@@ -4439,7 +4863,7 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/ui-check.m",
-      "source_location": "L6",
+      "source_location": "L12",
       "weight": 1.0
     },
     {
@@ -4449,7 +4873,17 @@
       "confidence": "EXTRACTED",
       "confidence_score": 1.0,
       "source_file": "tests/ui-check.m",
-      "source_location": "L9",
+      "source_location": "L15",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_main",
+      "target": "tests_ui_check_modeprobe",
+      "relation": "references",
+      "confidence": "EXTRACTED",
+      "confidence_score": 1.0,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L20",
       "weight": 1.0
     },
     {
@@ -4483,15 +4917,114 @@
       "weight": 1.0
     },
     {
-      "source": "appicon_trackpad_icon",
-      "target": "readme_trackpadclean",
-      "relation": "conceptually_related_to",
+      "source": "main_cleanapp_clicked",
+      "target": "readme_click_snapshot",
+      "relation": "references",
       "confidence": "INFERRED",
       "confidence_score": 0.95,
-      "source_file": "AppIcon.png",
-      "source_location": null,
-      "weight": 1
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L320",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_init",
+      "target": "readme_selected_mode",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L271",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_makemenu",
+      "target": "readme_selected_mode",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L409",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_presentmenu",
+      "target": "readme_deferred_activation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L428",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_selectmode",
+      "target": "readme_selected_mode",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L394",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_selectmode",
+      "target": "readme_deferred_activation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L399",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_showhover",
+      "target": "readme_selected_mode",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L315",
+      "weight": 1.0
+    },
+    {
+      "source": "main_cleanapp_togglecleaning",
+      "target": "readme_selected_mode",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "rationale": "Code state corresponds to the conceptual mode behavior described in README; this code-to-document correspondence is inferred.",
+      "source_file": "main.m",
+      "source_location": "L334",
+      "weight": 1.0
+    },
+    {
+      "source": "readme_logic_checks",
+      "target": "tests_ui_check_main",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "README.md",
+      "source_location": "L46",
+      "weight": 1.0
+    },
+    {
+      "source": "tests_ui_check_modeprobe_startcleaning",
+      "target": "readme_deferred_activation",
+      "relation": "references",
+      "confidence": "INFERRED",
+      "confidence_score": 0.95,
+      "source_file": "tests/ui-check.m",
+      "source_location": "L9",
+      "weight": 1.0
     }
   ],
-  "hyperedges": []
+  "hyperedges": [],
+  "built_at_commit": "601ab5b32978fc56d4f83ea15587ada8285654c2"
 }

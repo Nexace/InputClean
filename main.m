@@ -46,6 +46,10 @@ static NSString *ModeStatus(CleanMode mode) {
     return mode==CleanBoth?@"Keyboard & trackpad paused":mode==CleanKeyboard?@"Keyboard input paused":@"Trackpad input paused";
 }
 
+static BOOL ModeMenuClick(NSEventType type,NSEventModifierFlags flags) {
+    return type==NSEventTypeRightMouseUp || type==NSEventTypeRightMouseDown || (flags&NSEventModifierFlagControl)!=0;
+}
+
 static BOOL IsMouseSender(uint64_t sender) {
     if (!sender) return NO;
     io_registry_entry_t entry = IOServiceGetMatchingService(kIOMainPortDefault, IORegistryEntryIDMatching(sender));
@@ -80,7 +84,7 @@ static BOOL IsMouseEvent(CGEventRef event, NSMutableDictionary<NSNumber *,NSNumb
     NSNumber *key = @(sender), *known = cache[key];
     if (known) return known.boolValue;
     BOOL mouse = IsMouseSender(sender);
-    if (TraceInput) NSLog(@"TrackpadClean source=%llu externalMouse=%d",sender,mouse);
+    if (TraceInput) NSLog(@"InputClean source=%llu externalMouse=%d",sender,mouse);
     if (cache.count >= 16) [cache removeAllObjects];
     cache[key] = @(mouse);
     return mouse;
@@ -92,14 +96,18 @@ static NSImage *StatusIcon(BOOL cleaning) {
     CGContextScaleCTM(c, 2, 2);
     CGContextSetLineWidth(c, 1.3);
     CGContextSetLineCap(c, kCGLineCapRound);
-    CGPathRef shape = CGPathCreateWithRoundedRect(CGRectMake(1.5, 3.5, 15, 11.5), 2.6, 2.6, NULL);
+    CGPathRef shape = CGPathCreateWithRoundedRect(CGRectMake(1.5, 3, 15, 13), 2.6, 2.6, NULL);
     CGContextAddPath(c, shape);
     CGContextStrokePath(c);
     CGPathRelease(shape);
-    CGContextMoveToPoint(c, 2.2, 6.6);
-    CGContextAddLineToPoint(c, 15.8, 6.6);
+    CGContextMoveToPoint(c, 2.2, 8.5);
+    CGContextAddLineToPoint(c, 15.8, 8.5);
     CGContextStrokePath(c);
-    // A small cleaning sparkle above the trackpad's upper right corner.
+    for(int row=0;row<2;row++)for(int column=0;column<4;column++)
+        CGContextFillRect(c,CGRectMake(3.5+column*3,10+row*2.7,1.2,1.1));
+    shape=CGPathCreateWithRoundedRect(CGRectMake(5.4,4.4,6.6,2.5),.6,.6,NULL);
+    CGContextAddPath(c,shape);CGContextStrokePath(c);CGPathRelease(shape);
+    // A small cleaning sparkle above the keyboard and trackpad.
     CGContextSetBlendMode(c, kCGBlendModeClear);
     CGContextFillRect(c, CGRectMake(12, 11.5, 8, 8));
     CGContextSetBlendMode(c, kCGBlendModeNormal);
@@ -110,10 +118,10 @@ static NSImage *StatusIcon(BOOL cleaning) {
     CGContextStrokePath(c);
     if (cleaning) {
         CGContextSetLineWidth(c, 1.8);
-        CGContextMoveToPoint(c, 4, 9);
-        CGContextAddLineToPoint(c, 7, 9);
-        CGContextMoveToPoint(c, 10, 9);
-        CGContextAddLineToPoint(c, 13, 9);
+        CGContextMoveToPoint(c, 7, 5.3);
+        CGContextAddLineToPoint(c, 7, 6);
+        CGContextMoveToPoint(c, 10, 5.3);
+        CGContextAddLineToPoint(c, 10, 6);
         CGContextStrokePath(c);
     }
     CGImageRef bitmap = CGBitmapContextCreateImage(c);
@@ -191,6 +199,8 @@ static NSImage *StatusIcon(BOOL cleaning) {
 @property BOOL askedForAccess;
 @property BOOL cleaning;
 @property CleanMode mode;
+@property CleanMode selectedMode;
+@property CleanMode pendingMode;
 @property NSMutableDictionary<NSNumber *,NSNumber *> *deviceCache;
 @property CFMachPortRef tap;
 @property CFRunLoopSourceRef tapSource;
@@ -214,7 +224,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
             CGEventTapEnable(app.tap,true);
             resumed=CGEventTapIsEnabled(app.tap);
         }
-        if (TraceInput) NSLog(@"TrackpadClean filter disabled type=%u resumed=%d",type,resumed);
+        if (TraceInput) NSLog(@"InputClean filter disabled type=%u resumed=%d",type,resumed);
         if (!resumed) dispatch_async(dispatch_get_main_queue(), ^{ [app stopCleaning]; });
         return event;
     }
@@ -222,7 +232,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
         if (CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode) == 53) {
             if (CountEscape(&Escapes, 53, CGEventGetIntegerValueField(event, kCGKeyboardEventAutorepeat), CFAbsoluteTimeGetCurrent()))
                 dispatch_async(dispatch_get_main_queue(), ^{
-                    if (TraceInput) NSLog(@"TrackpadClean keyboard unlock completed");
+                    if (TraceInput) NSLog(@"InputClean keyboard unlock completed");
                     [app stopCleaning];
                 });
             return NULL;
@@ -232,7 +242,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     if (type == kCGEventKeyUp && CGEventGetIntegerValueField(event, kCGKeyboardEventKeycode) == 53) return NULL;
     if (type == kCGEventFlagsChanged) Escapes = (EscapeSequence){0};
     if(app.mode&CleanKeyboard) {
-        if(type==kCGEventKeyDown || type==kCGEventKeyUp || type==kCGEventFlagsChanged)return NULL;
+        if(type==kCGEventKeyDown || type==kCGEventKeyUp || type==kCGEventFlagsChanged) { app.blockedEvents++;return NULL; }
         if((uint32_t)type==14) { @autoreleasepool {
             NSEvent *key=[NSEvent eventWithCGEvent:event];
             if(key.subtype==NX_SUBTYPE_AUX_CONTROL_BUTTONS && ((key.data1>>16)&0xFFFF)!=NX_POWER_KEY)return NULL;
@@ -258,14 +268,15 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
 }
 
 @implementation CleanApp
+- (instancetype)init { if((self=[super init]))_selectedMode=CleanTrackpad;return self; }
 - (void)applicationDidFinishLaunching:(NSNotification *)notification { @autoreleasepool {
     (void)notification;
     self.readyIcon = StatusIcon(NO);
     self.cleaningIcon = StatusIcon(YES);
     self.item = [NSStatusBar.systemStatusBar statusItemWithLength:NSSquareStatusItemLength];
     self.item.button.image = self.readyIcon;
-    self.item.button.accessibilityLabel = @"TrackpadClean";
-    self.item.button.accessibilityHelp = @"Click to clean the trackpad. Right-click to clean the keyboard or both. Press Escape five times to restore input.";
+    self.item.button.accessibilityLabel = @"InputClean";
+    self.item.button.accessibilityHelp = @"Click to toggle the selected cleaning mode. Control-click or right-click to choose trackpad, keyboard, or both. Press Escape five times to restore input.";
     self.item.button.target = self;
     self.item.button.action = @selector(clicked:);
     [self.item.button sendActionOn:NSEventMaskLeftMouseUp | NSEventMaskRightMouseUp];
@@ -301,12 +312,15 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
 - (void)mouseExited:(NSEvent *)event { (void)event; if (!self.cleaning) [self hideCard]; }
 - (void)showHover {
     if (self.menuOpen || self.cleaning) return;
-    [self showCardWithStatus:@"Ready to clean" detail:@"Click to pause · Esc ×5 to restore" pinned:NO];
+    NSString *ready=self.selectedMode==CleanKeyboard?@"Keyboard ready":self.selectedMode==CleanBoth?@"Keyboard & trackpad ready":@"Trackpad ready";
+    [self showCardWithStatus:ready detail:@"Click to pause · Ctrl-click for options" pinned:NO];
 }
 - (void)clicked:(id)sender {
     (void)sender;
+    NSEvent *event=NSApp.currentEvent;
+    BOOL menu=ModeMenuClick(event.type,event.modifierFlags|NSEvent.modifierFlags);
     [self hideCard];
-    if (NSApp.currentEvent.type == NSEventTypeRightMouseUp) {
+    if (menu) {
         [self presentMenu];
         return;
     }
@@ -314,10 +328,10 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
 }
 - (void)toggleCleaning {
     if (self.cleaning) {
-        if (TraceInput) NSLog(@"TrackpadClean icon/menu unlock");
+        if (TraceInput) NSLog(@"InputClean icon/menu unlock");
         [self stopCleaning]; return;
     }
-    [self startCleaning:CleanTrackpad];
+    [self startCleaning:self.selectedMode];
 }
 - (void)startCleaning:(CleanMode)mode {
     if(!mode || (mode&~CleanBoth))return;
@@ -326,13 +340,13 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
             self.askedForAccess = YES;
             AXIsProcessTrustedWithOptions((__bridge CFDictionaryRef)@{(__bridge NSString *)kAXTrustedCheckOptionPrompt:@YES});
         }
-        [self showCardWithStatus:@"Allow Accessibility access" detail:@"Enable TrackpadClean, then click again" pinned:NO];
+        [self showCardWithStatus:@"Allow Accessibility access" detail:@"Enable InputClean, then click again" pinned:NO];
         return;
     }
     // The HID entry point is root-restricted; Accessibility permits a session filter.
     self.tap = CGEventTapCreate(kCGSessionEventTap, kCGHeadInsertEventTap, kCGEventTapOptionDefault,
         ModeMask(mode), FilterInput, (__bridge void *)self);
-    if (TraceInput) NSLog(@"TrackpadClean session filter created=%d",self.tap != NULL);
+    if (TraceInput) NSLog(@"InputClean session filter created=%d",self.tap != NULL);
     if (!self.tap) {
         [self showCardWithStatus:@"Input could not be paused" detail:@"Check Accessibility access, then try again" pinned:NO];
         return;
@@ -354,18 +368,19 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     self.item.button.accessibilityValue = ModeStatus(mode);
     self.unlockTimer = [NSTimer scheduledTimerWithTimeInterval:300 target:self selector:@selector(stopCleaning)
         userInfo:nil repeats:NO];
-    if(TraceInput)NSLog(@"TrackpadClean started mode=%lu",(unsigned long)mode);
+    if(TraceInput)NSLog(@"InputClean started mode=%lu",(unsigned long)mode);
     [self showCardWithStatus:ModeStatus(mode) detail:@"Click icon or press Esc ×5 to restore" pinned:YES];
 }
 - (void)stopCleaning {
     @autoreleasepool {
-        if (TraceInput && self.cleaning) NSLog(@"TrackpadClean stopped blocked=%lu mousePassed=%lu",self.blockedEvents,self.mouseEvents);
+        if (TraceInput && self.cleaning) NSLog(@"InputClean stopped blocked=%lu mousePassed=%lu",self.blockedEvents,self.mouseEvents);
         [self.unlockTimer invalidate]; self.unlockTimer = nil;
         if (self.tap) { CGEventTapEnable(self.tap, false); CFMachPortInvalidate(self.tap); }
         if (self.tapSource) { CFRunLoopRemoveSource(CFRunLoopGetMain(), self.tapSource, kCFRunLoopCommonModes); CFRelease(self.tapSource); self.tapSource = NULL; }
         if (self.tap) { CFRelease(self.tap); self.tap = NULL; }
         self.cleaning = NO;
         self.mode=0;
+        self.pendingMode=0;
         [self.activeMenu cancelTracking];
         self.deviceCache = nil;
         Escapes = (EscapeSequence){0};
@@ -375,9 +390,15 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     }
 }
 - (void)selectMode:(NSMenuItem *)item {
+    if(item.tag<(NSInteger)CleanTrackpad || item.tag>(NSInteger)CleanBoth)return;
+    self.selectedMode=(CleanMode)item.tag;
+    if(TraceInput)NSLog(@"InputClean selected mode=%lu",(unsigned long)self.selectedMode);
     BOOL stop=self.cleaning && self.mode==(CleanMode)item.tag;
     [self stopCleaning];
-    if(!stop)[self startCleaning:(CleanMode)item.tag];
+    if(!stop) {
+        if(self.menuOpen)self.pendingMode=(CleanMode)item.tag;
+        else [self startCleaning:(CleanMode)item.tag];
+    }
 }
 - (NSMenu *)makeMenu {
     NSMenu *menu = [NSMenu new];
@@ -385,7 +406,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     for(NSUInteger i=0;i<titles.count;i++) {
         NSMenuItem *item=[[NSMenuItem alloc]initWithTitle:titles[i] action:@selector(selectMode:) keyEquivalent:@""];
         item.target=self;item.tag=(NSInteger)i+1;
-        item.state=self.cleaning && self.mode==(CleanMode)item.tag?NSControlStateValueOn:NSControlStateValueOff;
+        item.state=(self.cleaning?self.mode:self.selectedMode)==(CleanMode)item.tag?NSControlStateValueOn:NSControlStateValueOff;
         [menu addItem:item];
     }
     if(self.cleaning) {
@@ -394,7 +415,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
         restore.target=self;[menu addItem:restore];
     }
     [menu addItem:NSMenuItem.separatorItem];
-    NSMenuItem *quit = [[NSMenuItem alloc] initWithTitle:@"Quit TrackpadClean" action:@selector(terminate:) keyEquivalent:@""];
+    NSMenuItem *quit = [[NSMenuItem alloc] initWithTitle:@"Quit InputClean" action:@selector(terminate:) keyEquivalent:@""];
     quit.target = NSApp; [menu addItem:quit];
     return menu;
 }
@@ -404,6 +425,9 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     [menu popUpMenuPositioningItem:nil atLocation:NSEvent.mouseLocation inView:nil];
     self.menuOpen = NO;
     self.activeMenu=nil;
+    CleanMode requested=self.pendingMode;self.pendingMode=0;
+    // Create keyboard taps after AppKit has left the menu's tracking loop.
+    if(requested)dispatch_async(dispatch_get_main_queue(), ^{ [self startCleaning:requested]; });
 } }
 - (void)presentCardWithStatus:(NSString *)status detail:(NSString *)detail pinned:(BOOL)pinned { @autoreleasepool {
     self.anchor = NSEvent.mouseLocation;
@@ -416,7 +440,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     panel.releasedWhenClosed=NO;panel.colorSpace=NSColorSpace.sRGBColorSpace;
     panel.hasShadow = YES; panel.opaque = NO; panel.backgroundColor = NSColor.clearColor;
     panel.collectionBehavior = NSWindowCollectionBehaviorCanJoinAllSpaces | NSWindowCollectionBehaviorFullScreenAuxiliary;
-    CardView *card=[[CardView alloc]initWithFrame:bounds];card.lines=@[@"TrackpadClean",status,detail];
+    CardView *card=[[CardView alloc]initWithFrame:bounds];card.lines=@[@"InputClean",status,detail];
     card.paused=self.cleaning;card.wantsLayer=YES;self.cardView=card;
     if(@available(macOS 26.0,*)) {
         NSGlassEffectView *glass=[[NSGlassEffectView alloc]initWithFrame:bounds];
@@ -461,7 +485,7 @@ int main(int argc, const char *argv[]) {
         }
         return 2;
     } }
-    TraceInput = getenv("TRACKPADCLEAN_DIAGNOSTICS") != NULL;
+    TraceInput = getenv("INPUTCLEAN_DIAGNOSTICS") != NULL;
     NSApplication *application;
     __attribute__((objc_precise_lifetime)) CleanApp *delegate;
     @autoreleasepool {

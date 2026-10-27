@@ -18,15 +18,32 @@ int main(int argc, const char *argv[]) {
         CGPathRelease(tile);
         CGColorRef shadow = CGColorCreateGenericRGB(0.01,0.08,0.12,0.4);
         CGContextSetShadowWithColor(c,CGSizeMake(0,-18),28,shadow);
-        CGPathRef pad = CGPathCreateWithRoundedRect(CGRectMake(229,282,566,405),67,67,NULL);
+        CGPathRef pad = CGPathCreateWithRoundedRect(CGRectMake(200,267,624,462),63,63,NULL);
         CGContextSetRGBFillColor(c,0.94,0.99,1,1);
         CGContextAddPath(c,pad); CGContextFillPath(c);
         CGContextSetShadowWithColor(c,CGSizeZero,0,NULL);
-        CGContextSetRGBStrokeColor(c,0.20,0.50,0.54,0.45);
-        CGContextSetLineWidth(c,6);
-        CGContextMoveToPoint(c,234,389); CGContextAddLineToPoint(c,790,389); CGContextStrokePath(c);
         CGPathRelease(pad); CGColorRelease(shadow);
-        // White diamond sparkle, lifted above the upper right edge.
+        // Two rows of keys and a spacebar, above a recessed trackpad.
+        CGContextSetRGBFillColor(c,0.10,0.42,0.47,0.75);
+        for(int row=0;row<2;row++)for(int column=0;column<6;column++) {
+            CGPathRef key=CGPathCreateWithRoundedRect(CGRectMake(258+column*88,540+row*60,67,38),10,10,NULL);
+            CGContextAddPath(c,key);CGContextFillPath(c);CGPathRelease(key);
+        }
+        CGPathRef bar=CGPathCreateWithRoundedRect(CGRectMake(375,488,274,32),10,10,NULL);
+        CGContextAddPath(c,bar);CGContextFillPath(c);CGPathRelease(bar);
+        pad=CGPathCreateWithRoundedRect(CGRectMake(353,318,318,133),25,25,NULL);
+        CGContextSetRGBFillColor(c,0.10,0.42,0.47,0.10);
+        CGContextAddPath(c,pad);CGContextFillPath(c);
+        CGContextSetRGBStrokeColor(c,0.10,0.42,0.47,0.4);CGContextSetLineWidth(c,4);
+        CGContextAddPath(c,pad);CGContextStrokePath(c);CGPathRelease(pad);
+        // Cursor overlaps the input deck, matching the menu utilities' card style.
+        CGContextMoveToPoint(c,664,477);CGContextAddLineToPoint(c,664,299);
+        CGContextAddLineToPoint(c,706,342);CGContextAddLineToPoint(c,734,286);
+        CGContextAddLineToPoint(c,772,304);CGContextAddLineToPoint(c,744,360);
+        CGContextAddLineToPoint(c,808,360);CGContextClosePath(c);
+        CGContextSetRGBFillColor(c,0.03,0.20,0.27,1);CGContextSetRGBStrokeColor(c,1,1,1,1);
+        CGContextSetLineWidth(c,7);CGContextDrawPath(c,kCGPathFillStroke);
+        // White cleaning sparkle above the keyboard's upper right edge.
         CGContextSetRGBFillColor(c,1,1,1,1);
         CGContextMoveToPoint(c,755,819);
         CGContextAddCurveToPoint(c,769,748,780,737,844,723);
