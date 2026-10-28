@@ -2,6 +2,7 @@ build/
 *.app/
 *.zip
 .DS_Store
+__pycache__/
 graphify-out/.*
 graphify-out/cost.json
 graphify-out/cache/

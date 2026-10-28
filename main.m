@@ -199,7 +199,6 @@ static NSImage *StatusIcon(BOOL cleaning) {
 @property BOOL askedForAccess;
 @property BOOL cleaning;
 @property CleanMode mode;
-@property CleanMode selectedMode;
 @property CleanMode pendingMode;
 @property NSMutableDictionary<NSNumber *,NSNumber *> *deviceCache;
 @property CFMachPortRef tap;
@@ -268,7 +267,6 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
 }
 
 @implementation CleanApp
-- (instancetype)init { if((self=[super init]))_selectedMode=CleanTrackpad;return self; }
 - (void)applicationDidFinishLaunching:(NSNotification *)notification { @autoreleasepool {
     (void)notification;
     self.readyIcon = StatusIcon(NO);
@@ -276,7 +274,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     self.item = [NSStatusBar.systemStatusBar statusItemWithLength:NSSquareStatusItemLength];
     self.item.button.image = self.readyIcon;
     self.item.button.accessibilityLabel = @"InputClean";
-    self.item.button.accessibilityHelp = @"Click to toggle the selected cleaning mode. Control-click or right-click to choose trackpad, keyboard, or both. Press Escape five times to restore input.";
+    self.item.button.accessibilityHelp = @"Click to pause both keyboard and trackpad. Control-click or right-click for keyboard-only or trackpad-only cleaning. Press Escape five times to restore input.";
     self.item.button.target = self;
     self.item.button.action = @selector(clicked:);
     [self.item.button sendActionOn:NSEventMaskLeftMouseUp | NSEventMaskRightMouseUp];
@@ -312,8 +310,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
 - (void)mouseExited:(NSEvent *)event { (void)event; if (!self.cleaning) [self hideCard]; }
 - (void)showHover {
     if (self.menuOpen || self.cleaning) return;
-    NSString *ready=self.selectedMode==CleanKeyboard?@"Keyboard ready":self.selectedMode==CleanBoth?@"Keyboard & trackpad ready":@"Trackpad ready";
-    [self showCardWithStatus:ready detail:@"Click to pause · Ctrl-click for options" pinned:NO];
+    [self showCardWithStatus:@"Click to pause keyboard & trackpad" detail:@"Esc ×5 to restore · Ctrl-click for options" pinned:NO];
 }
 - (void)clicked:(id)sender {
     (void)sender;
@@ -331,7 +328,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
         if (TraceInput) NSLog(@"InputClean icon/menu unlock");
         [self stopCleaning]; return;
     }
-    [self startCleaning:self.selectedMode];
+    [self startCleaning:CleanBoth];
 }
 - (void)startCleaning:(CleanMode)mode {
     if(!mode || (mode&~CleanBoth))return;
@@ -391,8 +388,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
 }
 - (void)selectMode:(NSMenuItem *)item {
     if(item.tag<(NSInteger)CleanTrackpad || item.tag>(NSInteger)CleanBoth)return;
-    self.selectedMode=(CleanMode)item.tag;
-    if(TraceInput)NSLog(@"InputClean selected mode=%lu",(unsigned long)self.selectedMode);
+    if(TraceInput)NSLog(@"InputClean selected mode=%ld",(long)item.tag);
     BOOL stop=self.cleaning && self.mode==(CleanMode)item.tag;
     [self stopCleaning];
     if(!stop) {
@@ -406,7 +402,7 @@ static CGEventRef FilterInput(CGEventTapProxy proxy, CGEventType type, CGEventRe
     for(NSUInteger i=0;i<titles.count;i++) {
         NSMenuItem *item=[[NSMenuItem alloc]initWithTitle:titles[i] action:@selector(selectMode:) keyEquivalent:@""];
         item.target=self;item.tag=(NSInteger)i+1;
-        item.state=(self.cleaning?self.mode:self.selectedMode)==(CleanMode)item.tag?NSControlStateValueOn:NSControlStateValueOff;
+        item.state=(self.cleaning?self.mode:CleanBoth)==(CleanMode)item.tag?NSControlStateValueOn:NSControlStateValueOff;
         [menu addItem:item];
     }
     if(self.cleaning) {
